@@ -7,13 +7,14 @@
     <!-- 标题 -->
     <div class="top clearfix">
       <h3>手机号登录/注册</h3>
-      <img src="../../../../public/Login/d8f.png" alt="">
+      <img src="../../../../public/Login/d8f.png" alt="" class="bottom">
       <p>华为用户首次登录额外领<span>最高100元</span>红包</p>
     </div>
     <!-- 用户输入 -->
     <div class="phone">
-      中国+86<img src="" alt="">
-      <mt-field placeholder="请输入手机号" v-model="phone"></mt-field>
+      <p>中国+86<i></i></p>
+      <input type="text" v-model="phone" placeholder="请输入手机号">
+      <img src="../../../../public/Login/fpk.png" alt="">
     </div>
     <!-- 用户输入完成，点击下一步 -->
     <div class="next">
@@ -94,7 +95,19 @@ export default {
 }
 // 用户输入
 .phone{
-  margin:30px 0;
+  margin:60px 0;
+  display: flex;
+  line-height:48px;
+  p{
+    margin-right:10px;
+    i{
+      width:12px;height:12px;
+      display:inline-block;
+      background:url("../../../../public/Login/dtn.png") no-repeat;
+      background-size:12px 12px;
+      margin-left:8px;
+    }
+  }
 }
 .clearfix:after{
   content:"";
@@ -104,7 +117,7 @@ export default {
 // 按钮
 .next{
   text-align: center;
-  margin-bottom:70px;
+  margin-bottom:120px;
   button{
     width:100%;
     border-radius:25px;
@@ -140,7 +153,7 @@ export default {
 }
 // 协议
 .xY{
-  margin-top:30px;
+  margin-top:35px;
   font-size:12px;
 }
 </style>
