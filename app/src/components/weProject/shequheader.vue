@@ -3,7 +3,7 @@
     <div class="header">
       <!-- 左侧图标 -->
       <div class="img_left">
-        <img src="../../assets/ceh.png" alt />
+        <img src="../../assets/g5r.png" alt />
       </div>
       <!-- 中间选项模块 -->
       <div class="neron">
@@ -38,6 +38,7 @@ export default {
 <style lang="scss" >
 .header {
   // 头部样式
+  margin:5px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
