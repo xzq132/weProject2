@@ -1,7 +1,21 @@
 <template>
   <div>
+    <mt-tab-container v-model="selected">
+      <mt-tab-container-item id="index">
+        111
+      </mt-tab-container-item>
+      <mt-tab-container-item id="tab2">
+        222
+      </mt-tab-container-item>
+      <mt-tab-container-item id="tab3">
+        333
+      </mt-tab-container-item>
+      <mt-tab-container-item id="tab4">
+        444
+      </mt-tab-container-item>
+    </mt-tab-container>
     <mt-tabbar v-model="selected">
-      <mt-tab-item id="tab1" @click.native="changeState(0)" :class="currentIndex[0].isSelect==true?'active':''">
+      <mt-tab-item id="index" @click.native="changeState(0)" :class="currentIndex[0].isSelect==true?'active':''">
         <tabbaricon
         :selectedImage="require('../../assets/g5r.png')"
         :normalImage="require('../../assets/g5q.png')"
@@ -37,7 +51,7 @@ import Tabbaricon from './common/TabBarIcon.vue'
 export default {
   data(){
     return {
-      selected:"tab1",
+      selected:"index",
       currentIndex:[
         {isSelect:true},
         {isSelect:false},
