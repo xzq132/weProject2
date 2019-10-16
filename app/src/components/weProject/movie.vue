@@ -11,7 +11,7 @@
         333
       </mt-tab-container-item>
       <mt-tab-container-item id="tab4">
-        444
+        <myself></myself>  
       </mt-tab-container-item>
     </mt-tab-container>
     <mt-tabbar v-model="selected">
@@ -48,6 +48,7 @@
 </template>
 <script>
 import Tabbaricon from './common/TabBarIcon.vue'
+import myself from './myself'
 export default {
   data(){
     return {
@@ -72,7 +73,8 @@ export default {
     }
   },
   components:{
-    "tabbaricon":Tabbaricon
+    "tabbaricon":Tabbaricon,
+    "myself":myself
   }
 }
 </script>
