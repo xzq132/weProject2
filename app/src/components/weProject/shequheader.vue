@@ -10,12 +10,12 @@
         <mt-navbar class="neron_center" v-model="selected">
           <mt-tab-item id="1">关注</mt-tab-item>
           <mt-tab-item id="2">消息</mt-tab-item>
-          <mt-tab-item id="3">社区1 </mt-tab-item>
+          <mt-tab-item id="3">社区</mt-tab-item>
         </mt-navbar>
       </div>
       <!-- 右侧图标 -->
       <div class="img_right">
-        <img src alt />
+        <img src="../../assets/ge.png" alt />
       </div>
     </div>
     <!-- 下方切换的模块 -->
@@ -35,14 +35,14 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 .header {
   // 头部样式
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
-  // 左边图标
-  .img_left {
+  // 左右边图标
+  .img_left,.img_right {
     img {
       height: 30px;
     }
@@ -50,14 +50,32 @@ export default {
   // 中间切换栏
   .neron {
     width: 200px; //宽
-    .nneron_center {
+    .neron_center {
       display: flex; //弹性布局
       justify-content: space-between;
+      .mint-tab-item{
+        margin-top:5px;
+        padding:0;
+        //字体大小
+        .mint-tab-item-label{
+          font-size: 16px;
+          color: #666;
+        }    
+      }
+      // 点击后样式
+      .is-selected{
+        display: block;
+        width: 50px;
+        border-bottom:3px solid #ff0;
+        border-image: -webkit-linear-gradient(rgba(255, 30, 0, 0.993), rgb(238, 126, 34)) 20 20;
+        width:100%;
+        .mint-tab-item-label{
+          font-size: 18px;
+          color: #000;
+        } 
+      }
     }
   }
 }
-//字体大小
-div .mint-tab-item-label .mint-tab-item-label {
-  font-size: 20px;
-}
+
 </style>
