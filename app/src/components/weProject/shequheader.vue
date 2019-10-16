@@ -22,7 +22,9 @@
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">关注模块</mt-tab-container-item>
       <mt-tab-container-item id="2">消息模块</mt-tab-container-item>
-      <mt-tab-container-item id="3">社区模块</mt-tab-container-item>
+      <mt-tab-container-item id="3">
+        <shequ></shequ>
+      </mt-tab-container-item>
     </mt-tab-container>
   </div>
 </template>
@@ -30,7 +32,7 @@
 export default {
   data() {
     return {
-      selected: 1
+      selected: 3
     };
   }
 };
@@ -38,10 +40,11 @@ export default {
 <style lang="scss" >
 .header {
   // 头部样式
-  margin:5px;
+  margin:15px 10px 0px 10px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
+  padding-bottom:8px;
   // 左右边图标
   .img_left,.img_right {
     img {
@@ -59,7 +62,7 @@ export default {
         padding:0;
         //字体大小
         .mint-tab-item-label{
-          font-size: 16px;
+          font-size: 18px;
           color: #666;
         }    
       }
@@ -71,7 +74,7 @@ export default {
         border-image: -webkit-linear-gradient(rgba(255, 30, 0, 0.993), rgb(238, 126, 34)) 20 20;
         width:100%;
         .mint-tab-item-label{
-          font-size: 18px;
+          font-size: 20px;
           color: #000;
         } 
       }
