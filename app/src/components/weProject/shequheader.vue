@@ -10,7 +10,7 @@
         <mt-navbar class="neron_center" v-model="selected">
           <mt-tab-item id="1">关注</mt-tab-item>
           <mt-tab-item id="2">消息</mt-tab-item>
-          <mt-tab-item id="3">社区</mt-tab-item>
+          <mt-tab-item id="3">社区1 </mt-tab-item>
         </mt-navbar>
       </div>
       <!-- 右侧图标 -->
