@@ -1,7 +1,8 @@
 <template>
     <div>
        
-       <div class="header"> <img src="../../../public/img/1bg.png" alt="" id="bg"></div>
+       <div class="header"> <img src="../../../public/img/1bg.png" alt="" id="bg">
+       </div>
        <div class="bar">
            <a href="#">深圳</a>
            <input type="text" placeholder="搜索时下美食..." id="sou">
@@ -35,6 +36,7 @@ export default {
         font-size:20px;
         background: #ddd;
         outline: 0;
+        border:none;
         
         }
 
