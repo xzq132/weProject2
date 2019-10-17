@@ -75,6 +75,8 @@ export default {
       var reg=/1[358]\d{9}/;
       if(!reg.test(this.phone)){
         this.$messagebox("提示","手机号格式不正确")
+      }else{
+        this.$router.push({path:'/Login1'})
       }
     },
     // 监听用户输入的手机号
@@ -178,7 +180,7 @@ export default {
 .question{
   margin-bottom:30px;
   font-size:14px;
-  color:#2ab6fa;
+  color:#00c;
 }
 // 按钮
 .next{
@@ -230,7 +232,7 @@ export default {
   margin-top:35px;
   font-size:12px;
   span{
-    color:#2ab6fa;
+    color:#00c;
   }
 }
 </style>
