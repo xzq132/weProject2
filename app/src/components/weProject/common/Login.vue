@@ -15,7 +15,10 @@
       <p>中国+86<i></i></p>
       <input type="number" v-model.number="phone" placeholder="请输入手机号" maxlength="11" @input="input">
       <img :class="btn?'no':'cha'" src="../../../../public/Login/fpk.png" @click="clear">
+      <p></p>
     </div>
+    <!-- 登录问题 -->
+    <p class="question">登录遇到问题</p>
     <!-- 用户输入完成，点击下一步 -->
     <div class="next">
       <mt-button class="button" v-bind:disabled="btn" @click="next">下一步</mt-button>
@@ -113,7 +116,7 @@ export default {
 // 关闭界面
 .close{
   img{
-    width:45px;
+    width:42px;
   }
 }
 // 顶部文字
@@ -139,10 +142,11 @@ export default {
 }
 // 用户输入
 .phone{
-  margin:60px 0 30px;
+  margin:40px 0 10px;
   display: flex;
   line-height:48px;
   align-items: center;
+  border-bottom:1px solid #e5e5e5;
   input{
     padding:5px 8px;
     font-size:14px;
@@ -169,6 +173,12 @@ export default {
 }
 .no{
   display:none;
+}
+// 登录遇到问题
+.question{
+  margin-bottom:30px;
+  font-size:14px;
+  color:#2ab6fa;
 }
 // 按钮
 .next{
