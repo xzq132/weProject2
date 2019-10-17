@@ -8,7 +8,7 @@
       <!-- 中间选项模块 -->
       <div class="neron">
         <mt-navbar class="neron_center" v-model="selected">
-          <mt-tab-item id="1">关注</mt-tab-item>
+          <mt-tab-item id="1" :class="is-selected==true">关注</mt-tab-item>
           <mt-tab-item id="2">消息</mt-tab-item>
           <mt-tab-item id="3" >社区</mt-tab-item>
         </mt-navbar>
@@ -20,7 +20,7 @@
     </div>
     <!-- 下方切换的模块 -->
     <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="1">关注模块</mt-tab-container-item>
+      <mt-tab-container-item  style="display:block" id="1">关注模块</mt-tab-container-item>
       <mt-tab-container-item id="2">消息模块</mt-tab-container-item>
       <mt-tab-container-item id="3">
         <shequ></shequ>
@@ -32,8 +32,11 @@
 export default {
   data() {
     return {
-      selected: 3
+      selected:1,
     };
+  },
+  methods:{
+    
   }
 };
 </script>

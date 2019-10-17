@@ -29,9 +29,12 @@
       <!-- 兴趣主体图片 -->
       <div class="like_img">
         <div class="like_img_one">
-          <img src="" alt="">
-          <div><i></i><span></span></div>
-          <div>深圳吃喝玩乐</div>
+          <img src="../../assets/guanzhu/ch.jpg" alt="">
+          <div class="tb">
+            <i></i>
+            <span>1.9万人</span>
+          </div>
+          <div class="tuijian">深圳吃喝玩乐</div>
         </div>
       </div>
     </div>
@@ -104,6 +107,36 @@
     }
     .jian{
       right:-18px;top:-7px;
+    }
+  }
+  .like_img{
+    border-top:1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    .like_img_one{
+      position: relative;
+      width: 110px;
+      text-align: center;
+      img{
+        border-radius: 10px;
+        width:85px;
+        margin:10px;
+      }
+      .tb{
+        position: absolute;
+        left:35px;
+        top:45px;
+        i{
+          display: block;
+          width: 30px;
+          height:30px;
+          background: url("../../assets/geb.png") no-repeat;
+          background-size: 30%;
+        }
+        span{
+          font-size: 12px;
+        }
+      }
     }
   }
 }
