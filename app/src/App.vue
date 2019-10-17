@@ -5,6 +5,9 @@
 </template>
 
 <style lang="scss">
+ul,li{
+  list-style: none;
+}
 body{
   padding:0;
   margin:0;
