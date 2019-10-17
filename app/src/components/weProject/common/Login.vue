@@ -178,7 +178,7 @@ export default {
 .question{
   margin-bottom:30px;
   font-size:14px;
-  color:#2ab6fa;
+  color:#00c;
 }
 // 按钮
 .next{
@@ -230,7 +230,7 @@ export default {
   margin-top:35px;
   font-size:12px;
   span{
-    color:#2ab6fa;
+    color:#00c;
   }
 }
 </style>
