@@ -44,9 +44,7 @@ export default {
     showl(n){
       for(var i=0;i<this.vshow.length;i++){
         if(n==i){
-          this.vshow[i].show=true;
-          console.log(this.vshow[i].show)
-         console.log(n,i); 
+          this.vshow[i].show=true; 
         }else{
           this.vshow[i].show=false;
         }
