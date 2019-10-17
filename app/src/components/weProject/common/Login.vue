@@ -13,7 +13,7 @@
     <!-- 用户输入 -->
     <div class="phone">
       <p>中国+86<i></i></p>
-      <input type="text" v-model="phone" placeholder="请输入手机号">
+      <input type="text" v-model="phone" placeholder="请输入手机号" maxlength="11">
       <img src="../../../../public/Login/fpk.png" alt="">
     </div>
     <!-- 用户输入完成，点击下一步 -->
@@ -98,6 +98,17 @@ export default {
   margin:60px 0;
   display: flex;
   line-height:48px;
+  align-items: center;
+  input{
+    padding:5px 8px;
+    font-size:14px;
+    border:none;
+    outline:none;
+  }
+  img{
+    width:30px;
+    height:30px;
+  }
   p{
     margin-right:10px;
     i{
@@ -118,10 +129,12 @@ export default {
 .next{
   text-align: center;
   margin-bottom:120px;
-  button{
+  .btn{
     width:100%;
     border-radius:25px;
     margin-bottom:10px;
+    background-color:#ffa111;
+    color:#fff;
   }
 }
 // 第三方快捷登录
