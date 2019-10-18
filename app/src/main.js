@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import shequ from './components/weProject/shequ.vue'
 import buluo from './components/weProject/buluo.vue'
+import shequbar from './components/weProject/common/shequbar.vue'
 
 //功能：引入第三方组件库mint-ui
 //1.完整引入mint-ui组件库中所有组件
@@ -13,6 +14,7 @@ import "mint-ui/lib/style.css"
 //3.将mint-ui注册Vue实例
 Vue.component("shequ",shequ)
 Vue.component("buluo",buluo)
+Vue.component("shequbar",shequbar)
 
 Vue.use(MintUi)
 

@@ -3,14 +3,14 @@
     <!-- 头部打卡模块 -->
     <div class="shequ">
       <div class="shequ_top">
-        <img src="../../assets/rl.jpg" alt="">
+        <img src="../../assets/rl.jpg" alt />
         <!-- 需判断用户是否判断 -->
         <span>立即打卡</span>
       </div>
       <div class="shequ_top2">
         <div>
-          <img src="../../assets/dk.jpg" alt="">
-          <span>我的帖子</span>  
+          <img src="../../assets/dk.jpg" alt />
+          <span>我的帖子</span>
         </div>
         <!--右边箭头图片 -->
         <div class="jian"></div>
@@ -28,23 +28,37 @@
       </div>
       <!-- 兴趣主体内容 -->
       <buluo></buluo>
-      
-      <!--  -->
-
-
-<!--  -->
+      <div class="kong"></div>
+      <!-- 部落活动 -->
+      <div class="like_header">
+        <span class="like_header_left">活动部落</span>
+        <span class="like_header_right huodong">6个活动进行中</span>
+        <div class="jian"></div>
+      </div>
+      <!-- 活动部落主体 -->
+      <div class="remen">
+        <div class="text">热门活动</div>
+        <div class="center">发帖送PASS卡&代金券|一城一故事·鹏城食记第60期，加精还能上首页！</div>
+        <div class="span1">
+          <span class="one">PASS卡&代金卷</span>
+          <span class="tow"><i></i>10月9日-10月29日</span>
+        </div>
+        <div class="span2">
+          <span class="one">8858人感兴趣</span>
+          <span class="tow">来自部落:深圳吃喝玩乐</span>
+        </div>
+      </div>
     </div>
+    <div class="kong"></div>
+    <shequbar></shequbar>
   </div>
 </template>
 <script>
 export default {
-  data(){
-    return{
-    
-    }
-  }    
-}
-
+  data() {
+    return {};
+  }
+};
 </script>
 <style lang="scss" scoped>
 .shequ {
@@ -114,64 +128,75 @@ export default {
     position: relative;
     .like_header_left {
       font-size: 17px;
+      font-weight: bold;
     }
+    // 兴趣部落文字
     .like_header_right {
       margin-right: 4px;
       font-size: 15px;
       color: #888;
+    }
+    // 活动部落文字
+    .huodong{
+      color:rgb(226, 137, 3);
     }
     .jian {
       right: -18px;
       top: -7px;
     }
   }
-  // .like_img {
-  //   width: 600px;
-  //   border-top: 1px solid #ccc;
-  //   display: flex;
-
-  //   .like_img_one {
-  //     position: relative;
-  //     width: 110px;
-  //     text-align: center;
-  //     img {
-  //       border-radius: 10px;
-  //       width: 85px;
-  //       margin: 10px 10px 0 10px;
-  //     }
-  //     .tb {
-  //       width: 85px;
-  //       background: rgba(0, 0, 0, 0.5);
-  //       position: absolute;
-  //       left: 10px;
-  //       bottom: 23px;
-  //       border-radius: 8px;
-  //       color: #bbb;
-  //       i {
-  //         position: absolute;
-  //         left: 10px;
-  //         top: 2px;
-  //         display: block;
-  //         width: 80px;
-  //         height: 20px;
-  //         background: url("../../assets/geb.png") no-repeat;
-  //         background-size: 15%;
-  //       }
-  //       span {
-  //         font-size: 12px;
-  //         margin-left: 10px;
-  //       }
-  //     }
-  //     .tuijian {
-  //       width: 70px;
-  //       font-size: 14px;
-  //       overflow: hidden;
-  //       text-overflow: ellipsis;
-  //       white-space: nowrap;
-  //       margin-left: 14px;
-  //       // margin-top:50px;
-  //     }
-  //   }
-  // }
+  // 部落活动内容
+  .remen{
+    box-shadow: 0px 0px 4px #ccc;
+    border-radius: 10px;
+    margin:10px;
+    .text{
+      width: 70px;
+      height:20px;
+      line-height: 20px;
+      color:#eee;
+      font-size: 12px;
+      text-align: center;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background-image:linear-gradient(to right,#f7551a,#fa997b)
+    }
+    .center{
+      font-weight: bold;
+      font-size: 17px;
+      margin:5px 15px 5px 15px;
+    }
+    .span1{
+      display: flex;
+      justify-content:space-between;
+      margin:10px 15px 0px 15px;
+      .one{
+        border:1px solid #f7551a;
+        color:#f7551a;
+        font-size: 13px;
+      }
+      .tow{
+        font-size: 15px;
+        position: relative;
+        i{
+          width: 20px;height: 20px;
+          position: absolute;
+          left:-22px;top:-1px;
+          display: block;
+          background: url("../../assets/sz.jpg") no-repeat;
+          background-size: 117%;
+        }
+      }
+    }
+    .span2{
+      display: flex;
+      justify-content:space-between;
+      margin:15px 15px 20px 15px;
+      span{
+        color:#999;
+        font-size: 14px;
+      }
+    }
+  }
 }
 </style>
