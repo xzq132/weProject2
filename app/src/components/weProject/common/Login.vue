@@ -60,6 +60,9 @@ export default {
       btn:true
     }
   },
+  created() {
+    console.log(this.phone)
+  },
   mounted() {
     document.getElementsByTagName("input")[0].focus();
   },
@@ -76,7 +79,8 @@ export default {
       if(!reg.test(this.phone)){
         this.$messagebox("提示","手机号格式不正确")
       }else{
-        this.$router.push({path:'/Login1'})
+        this.$router.push({path:'/Login1'}),localStorage.setItem("phone",this.phone);
+        this.phone=sessionStorage.getItem("phone");
       }
     },
     // 监听用户输入的手机号

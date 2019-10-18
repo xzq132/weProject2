@@ -1,13 +1,13 @@
 <template>
   <div class="login">
     <!-- 返回上一级界面 -->
-    <div class="close">
+    <div class="close" @click="back">
       <img src="../../../../public/Login/cl5.png" alt="">
     </div>
     <!-- 标题 -->
     <div class="top clearfix">
       <h3>密码登录</h3>
-      <p>您输入的号码是<span>+86&nbsp;18617056212</span></p>
+      <p>您输入的号码是<span>+86&nbsp;{{phone1}}</span></p>
     </div>
     <!-- 用户输入 -->
     <div class="upwd">
@@ -16,7 +16,7 @@
     </div>
     <!-- 登录问题 -->
     <div class="ways">
-      <p class="question">验证码登录</p>
+      <p class="question" @click="yzm">验证码登录</p>
       <p>登录遇到问题</p>
     </div>
     <!-- 用户输入完成，点击下一步 -->
@@ -30,13 +30,30 @@ export default {
   data(){
     return {
       upwd:'',
-      btn:true
+      btn:true,
+      phone1:''
     }
+  },
+  created() {
+    this.phone1=localStorage.getItem("phone");
+    console.log(this.phone1)
   },
   mounted() {
     document.getElementsByTagName("input")[0].focus();
   },
   methods: {
+    // 获取用户手机号
+    phone(){
+      this.phone=localStorage.getItem("phone");
+    },
+    // 点击用验证码登录
+    yzm(){
+      this.$router.push({path:"/Login1"})
+    },
+    // 点击返回上一页
+    back(){
+      this.$router.go(-1)
+    },
     // 点击右边×的时候回清空input的值
     clear(){
       this.upwd="";
