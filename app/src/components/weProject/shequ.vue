@@ -147,7 +147,7 @@ export default {
   }
   // 部落活动内容
   .remen{
-    box-shadow: 0px 0px 4px #ccc;
+    border:1px solid #ccc;
     border-radius: 10px;
     margin:10px;
     .text{

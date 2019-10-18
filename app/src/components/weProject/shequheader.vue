@@ -8,10 +8,10 @@
       <!-- 中间选项模块 -->
       <div class="neron">
         <mt-navbar class="neron_center" v-model="selected">
-          <mt-tab-item id="gz" @click.native="showl(0)"  :class="vshow[0].show==true?'is-selected':''"  >关注</mt-tab-item>
-          <mt-tab-item id="xiaoxi" @click.native="showl(1)" >消息</mt-tab-item>
-          <mt-tab-item id="sq" @click.native="showl(2)"  >社区</mt-tab-item>
-        </mt-navbar> 
+          <mt-tab-item id="1" :class="is-selected==true">关注</mt-tab-item>
+          <mt-tab-item id="2">消息</mt-tab-item>
+          <mt-tab-item id="3" >社区</mt-tab-item>
+        </mt-navbar>
       </div>
       <!-- 右侧图标 -->
       <div class="img_right">
@@ -20,9 +20,9 @@
     </div>
     <!-- 下方切换的模块 -->
     <mt-tab-container v-model="selected">
-      <mt-tab-container-item  id="gz">关注模块</mt-tab-container-item>
-      <mt-tab-container-item  id="xiaoxi">消息模块</mt-tab-container-item>
-      <mt-tab-container-item  id="sq">
+      <mt-tab-container-item  style="display:block" id="1">关注模块</mt-tab-container-item>
+      <mt-tab-container-item id="2">消息模块</mt-tab-container-item>
+      <mt-tab-container-item id="3">
         <shequ></shequ>
       </mt-tab-container-item>
     </mt-tab-container>
@@ -32,24 +32,11 @@
 export default {
   data() {
     return {
-     selected:"gz",
-     vshow:[
-       {show:true},
-       {show:false},
-       {show:false}
-     ],
-    }
+      selected:1,
+    };
   },
   methods:{
-    showl(n){
-      for(var i=0;i<this.vshow.length;i++){
-        if(n==i){
-          this.vshow[i].show=true; 
-        }else{
-          this.vshow[i].show=false;
-        }
-      }
-    }
+    
   }
 };
 </script>
@@ -75,18 +62,14 @@ export default {
       justify-content: space-between;
       .mint-tab-item{
         margin-top:5px;
-        padding: 0;
+        padding:0;
         //字体大小
         .mint-tab-item-label{
           font-size: 18px;
           color: #666;
-           
         }    
       }
       // 点击后样式
-      // .is-selected{
-      //   border-bottom:0px;
-      // }
       .is-selected{
         display: block;
         width: 50px;
