@@ -6,7 +6,12 @@ import shequheader from './components/weProject/shequheader.vue'
 import Gon from './components/weProject/gon.vue'
 import G from './components/weProject/g.vue'
 import GonChild3 from './components/weProject/gonChild3.vue'
-import tribe from './components/weProject/tribe.vue'
+// import tribe from './components/weProject/tribe.vue'
+// import myself from './components/weProject/myself.vue'
+
+import tribe from  './components/weProject/tribe.vue'
+import activity from './components/weProject/activity.vue'
+
 
 Vue.use(Router)
 
@@ -16,8 +21,9 @@ export default new Router({
     {path:"/G",component:G},
     {path:"/Gon",component:Gon},
     {path:"/Movie",component:Movie},
-    {path:"/shequheader",component:shequheader},
-    {path:"/tribe",component:tribe},
+    {path:"/shequheader",component:shequheader},//关注页面
+    {path:"/tribe",component:tribe},//兴趣部落页面
+    {path:"/activity",component:activity},//部落活动页面
     {
       path: '/',
       name: 'home',
