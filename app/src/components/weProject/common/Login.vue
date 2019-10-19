@@ -55,7 +55,51 @@ export default {
     return {
       phone:''
     }
-  }
+  },
+  created() {
+    console.log(this.phone)
+  },
+  mounted() {
+    document.getElementsByTagName("input")[0].focus();
+  },
+  methods: {
+    // 点击右边×的时候回清空input的值
+    clear(){
+      this.phone="";
+      this.btn=true;
+      document.getElementsByTagName("input")[0].focus();
+    },
+    // 检测手机号的格式
+    next(){
+      var reg=/1[358]\d{9}/;
+      if(!reg.test(this.phone)){
+        this.$messagebox("提示","手机号格式不正确")
+      }else{
+        this.$router.push({path:'/Login1'}),localStorage.setItem("phone",this.phone);
+        this.phone=sessionStorage.getItem("phone");
+      }
+    },
+    // 监听用户输入的手机号
+    input(){
+      var g=/\d{1,11}/;
+      if(g.test(this.phone)){
+        this.btn=false;
+      }else{
+        this.btn=true;
+      }
+    },
+    // 当点击更多的时候，让微博显示，更多隐藏
+    more(){
+      // 获取微博
+      var wb=document.getElementsByClassName("wb")[0];
+      // 微博显示
+      wb.style.display="block";
+      // 获取更多
+      var more=document.getElementById("more");
+      // 更多隐藏
+      more.style.display="none";
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
