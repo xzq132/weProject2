@@ -4,7 +4,7 @@
        <div class="header"> <img src="../../../public/img/1bg.png" alt="" id="bg">
        </div>
        <div class="bar">
-           <a href="#">{{didian}}</a>
+           <a href="#" @click="all">{{didian}}</a>
            <input type="text" placeholder="搜索时下美食..." id="sou">
            <a href="#">写攻略</a>
        </div>
@@ -39,6 +39,7 @@ export default {
             window.addEventListener('scroll', this.scrollHandle,true);  // 绑定页面的滚动事件
           },
           methods: {
+              all(){this.$.router.push("g")},
               scrollHandle: function() {
             var mubu=document.getElementsByClassName("mubu")[0];
             var scroll=document.documentElement.scrollTop || document.body.scrollTop;
@@ -92,7 +93,7 @@ export default {
        background:#fff;
         border-top-left-radius: 30px;
         border-top-right-radius:30px;
-        padding:10px;margin-top:17px;
+        padding:10px;margin-top:49px;
         
         }
         .pic_5{width:66%;border-top-left-radius: 20px;height:142px;
