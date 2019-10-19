@@ -11,12 +11,19 @@ import shequbar from './components/weProject/common/shequbar.vue'
 import MintUi from "mint-ui"
 //2.单引入mint-ui库中样式文件
 import "mint-ui/lib/style.css"
-//3.将mint-ui注册Vue实例
+//组件模块
 Vue.component("shequ",shequ)
 Vue.component("buluo",buluo)
 Vue.component("shequbar",shequbar)
-
+//3.将mint-ui注册Vue实例
 Vue.use(MintUi)
+
+// 功能：引用vant-ui 组件库
+// 导入vant-ui库中所有组件
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
 
 Vue.config.productionTip = false
 

@@ -22,8 +22,8 @@
     <div class="like">
       <!-- 兴趣头部 -->
       <div class="like_header">
-        <span class="like_header_left">兴趣部落</span>
-        <span class="like_header_right">全部</span>
+        <span class="like_header_left" @click="gotribe">兴趣部落</span>
+        <span class="like_header_right" @click="gotribe">全部</span>
         <div class="jian"></div>
       </div>
       <!-- 兴趣主体内容 -->
@@ -57,7 +57,12 @@
 export default {
   data() {
     return {};
-  }
+  },
+  methods: {
+    gotribe(){
+      this.$router.replace("/tribe")//跳转到兴趣部落
+    }
+  },
 };
 </script>
 <style lang="scss" scoped>

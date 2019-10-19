@@ -5,6 +5,7 @@ import Login from './components/weProject/common/Login.vue'
 import shequheader from './components/weProject/shequheader.vue'
 import Gon from './components/weProject/gon.vue'
 import myself from './components/weProject/myself.vue'
+import tribe from  './components/weProject/tribe.vue'
 
 
 Vue.use(Router)
@@ -16,7 +17,7 @@ export default new Router({
     {path:"/Gon",component:Gon},
     {path:"/Movie",component:Movie},
     {path:"/shequheader",component:shequheader},
-   
+    {path:"/tribe",component:tribe},
     {
       path: '/',
       name: 'home',
