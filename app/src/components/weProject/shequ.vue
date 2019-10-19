@@ -31,8 +31,8 @@
       <div class="kong"></div>
       <!-- 部落活动 -->
       <div class="like_header">
-        <span class="like_header_left">活动部落</span>
-        <span class="like_header_right huodong">6个活动进行中</span>
+        <span class="like_header_left" @click="goactivity">活动部落</span>
+        <span class="like_header_right huodong" @click="goactivity">6个活动进行中</span>
         <div class="jian"></div>
       </div>
       <!-- 活动部落主体 -->
@@ -61,6 +61,9 @@ export default {
   methods: {
     gotribe(){
       this.$router.replace("/tribe")//跳转到兴趣部落
+    },
+    goactivity(){
+      this.$router.replace("/activity")//跳转部落活动
     }
   },
 };
@@ -152,9 +155,9 @@ export default {
   }
   // 部落活动内容
   .remen{
-    border:1px solid #ccc;
     border-radius: 10px;
     margin:10px;
+    box-shadow: 1px 1px 5px #888888;
     .text{
       width: 70px;
       height:20px;

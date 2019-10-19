@@ -137,7 +137,7 @@ export default {
   margin: 10px;
   // 评论主表题
   .lm_header {
-    background: #eee;
+    background: #f5f5f5;
     
     border-radius: 10px;
     display: flex;
