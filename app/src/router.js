@@ -4,16 +4,15 @@ import Movie from './components/weProject/movie.vue'
 import Login from './components/weProject/common/Login.vue'
 import shequheader from './components/weProject/shequheader.vue'
 import Gon from './components/weProject/gon.vue'
-import myself from './components/weProject/myself.vue'
-import tribe from  './components/weProject/tribe.vue'
-
+import G from './components/weProject/g.vue'
+import GonChild3 from './components/weProject/gonChild3.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path:'/myself',component:myself},
-    {path:'/login',component:Login},
+    {path:"/GonChild3",component:GonChild3},
+    {path:"/G",component:G},
     {path:"/Gon",component:Gon},
     {path:"/Movie",component:Movie},
     {path:"/shequheader",component:shequheader},
