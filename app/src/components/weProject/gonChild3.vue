@@ -4,7 +4,7 @@
     <div id="child2">
        <div class="div1">
            <div>
-               <a href="#" @click="all">
+               <a href="#">
                    <span class="span1">食客攻略</span>
                <span class="span2">全部74篇</span>
                </a>
@@ -15,15 +15,7 @@
        </div>
         <!--移动端滑动效果-->
        
-       <ul>
-           <li>烤肉不能停</li>
-            <li>网红店</li>
-            <li>自助大胃王</li>
-            <li>海鲜情报站</li>
-            <li>小资咖啡店</li>
-            <li>面包甜点</li>
-            <li>夜宵撸串</li>
-        </ul> 
+      
     
     <!-- 第一个-->
     <div class="div2">
@@ -51,7 +43,7 @@
     </div>
       <!--加载更多-->
       <div class="jiazha">
-          <a href="#" @click="all">查看更多攻略</a>
+          <a href="#">查看更多攻略</a>
           <img src="../../../public/img/jt.png" alt="">
       </div>  
         </div>
@@ -61,7 +53,7 @@
         <div id="child2">
        <div class="div1">
            <div>
-               <a href="#" @click="all">
+               <a href="#">
                    <span class="span1">美好家居研究所</span>
                <span class="span2">全部815篇</span>
                </a>
@@ -72,15 +64,7 @@
        </div>
         <!--移动端滑动效果-->
        
-       <ul>
-           <li>家居设计所</li>
-            <li>好物清单</li>
-            <li>爆改小户型</li>
-            <li>超强收纳</li>
-            <li>低成本改造</li>
-            <li>老房逆袭</li>
-            <li>少女心好物</li>
-        </ul> 
+       
     
     <!-- 第一个-->
     <div class="div2">
@@ -108,7 +92,7 @@
     </div>
       <!--加载更多-->
       <div class="jiazha">
-          <a href="#" @click="all">查看更多攻略</a>
+          <a href="#">查看更多攻略</a>
           <img src="../../../public/img/jt.png" alt="">
       </div>  
         </div>
@@ -125,8 +109,7 @@
            span2_1:"博若森装饰",span2_2:936,span2_3:42,
            span2_11:"博若森装饰",span2_22:1826,span2_33:54
 
-       }},
-       methods:{all(){this.$router.push("GonChild3")}}
+       }}
     }
 </script>
 <style lang="scss" scoped>

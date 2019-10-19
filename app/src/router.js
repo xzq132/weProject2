@@ -4,11 +4,13 @@ import Movie from './components/weProject/movie.vue'
 import shequheader from './components/weProject/shequheader.vue'
 import Gon from './components/weProject/gon.vue'
 import G from './components/weProject/g.vue'
+import GonChild3 from './components/weProject/gonChild3.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {path:"/GonChild3",component:GonChild3},
     {path:"/G",component:G},
     {path:"/Gon",component:Gon},
     {path:"/Movie",component:Movie},

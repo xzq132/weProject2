@@ -4,20 +4,20 @@
        <div class="header"> <img src="../../../public/img/1bg.png" alt="" id="bg">
        </div>
        <div class="bar">
-           <a href="#" @click="all">{{didian}}</a>
+           <a href="#" >{{didian}}</a>
            <input type="text" placeholder="搜索时下美食..." id="sou">
            <a href="#">写攻略</a>
        </div>
        
         <div class="content1">
             <div>
-                <a href="#"><img src="../../../public/img/pic_5.png" alt="" class="pic_5"></a>
-                <a href="#"><img src="../../../public/img/pic_6.png" alt="" class="pic_6"></a>
+                <a href="#" @click="all"><img src="../../../public/img/pic_5.png" alt="" class="pic_5"></a>
+                <a href="#" @click="all"><img src="../../../public/img/pic_6.png" alt="" class="pic_6"></a>
             </div>
             <div>
-                <a href="#"><img src="../../../public/img/pic_7.png" alt="" class="pic"></a>
-                <a href="#"><img src="../../../public/img/pic_8.png" alt="" class="pic"></a>
-                <a href="#"><img src="../../../public/img/pic_9.png" alt="" class="pic"></a>
+                <a href="#" @click="all"><img src="../../../public/img/pic_7.png" alt="" class="pic"></a>
+                <a href="#" @click="all"><img src="../../../public/img/pic_8.png" alt="" class="pic"></a>
+                <a href="#" @click="all"><img src="../../../public/img/pic_9.png" alt="" class="pic"></a>
             </div>
          </div>
          <gonchild1></gonchild1>
@@ -39,7 +39,7 @@ export default {
             window.addEventListener('scroll', this.scrollHandle,true);  // 绑定页面的滚动事件
           },
           methods: {
-              all(){this.$.router.push("g")},
+              all(){this.$router.push("GonChild3")},
               scrollHandle: function() {
             var mubu=document.getElementsByClassName("mubu")[0];
             var scroll=document.documentElement.scrollTop || document.body.scrollTop;

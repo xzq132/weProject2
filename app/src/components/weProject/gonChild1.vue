@@ -90,7 +90,8 @@ export default {
         sp_21:'萌宠',sp_22:'兴趣',sp_23:'家居',sp_201:397,sp_202:403,sp_203:815,
         sp_31:'购物',sp_32:'品酒',sp_33:'菜谱',sp_301:197,sp_302:168,sp_303:1600
         
-        }}
+        }},
+        methods:{all(){this.$router.push("GonChild3")},}
 }
 </script>
 <style lang="scss" scoped>
