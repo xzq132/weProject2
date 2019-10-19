@@ -30,14 +30,55 @@
           <!-- 精选部落 -->
           <div class="tar_header">
             <div class="tar_header_top">
-              <img src="" alt="">
-              <span>深圳吃喝玩乐</span>
-              <span>18091人加入</span>
+              <div>
+                <img src="../../assets/guanzhu/ch.jpg" alt />
+              </div>
+              <div class="span_top">
+                <span class="span1">
+                  深圳吃喝玩乐
+                  <div class="span2">18091人加入</div>
+                </span>
+                <span class="text">
+                  <i>+</i>加入
+                </span>
+              </div>
+              <!-- 介绍 -->
             </div>
-            <div></div>
+            <!-- 介绍文字 -->
+            <div
+              class="tar_text"
+            >即日起，鹏城吃喝玩乐正式更名为深圳吃喝玩乐。这是一个圈子，包容所有关于身边的一切，美食、旅行、生活、八卦、情感等等。欢迎分享你生活中的点点滴滴，找到志同道合的朋友，成为彼此的知己！</div>
+            <div class="ge"></div>
           </div>
         </div>
-        <div v-show="isshow[2].alive==1">333</div>
+        <div class="tar_tow" v-show="isshow[2].alive==1">
+          <!-- 吃货研究所 -->
+          <div class="tar_header">
+            <div class="tar_header_top">
+              <div>
+                <img src="../../assets/guanzhu/ms.jpg" alt />
+              </div>
+              <div class="span_top">
+                <span class="span1">
+                  美食厨房DIY
+                  <div class="span2">84781人加入</div>
+                </span>
+                <span class="text">
+                  <i>+</i>加入
+                </span>
+              </div>
+              <!-- 介绍 -->
+            </div>
+            <!-- 介绍文字 -->
+            <div class="tar_text">
+              厨艺比拼，高手过招。
+              <br />互通有无，共同进步。
+              <br />自己动手，其乐无穷。
+              <br />爱生活，让我们从爱厨房开始吧
+            </div>
+            <div class="ge"></div>
+          </div>
+        </div>
         <div v-show="isshow[3].alive==1">444</div>
         <div v-show="isshow[4].alive==1">555</div>
         <div v-show="isshow[5].alive==1">666</div>
@@ -53,8 +94,19 @@
 export default {
   data() {
     return {
-      activeKey: 0,
-      isshow: [{ alive: 1 }, { alive: 0 }, { alive: 0 }, { alive: 0 }, { alive: 0 }, { alive: 0 }, { alive: 0 }, { alive: 0 }, { alive: 0 }, { alive: 0 }]
+      activeKey: 1,
+      isshow: [
+        { alive: 0 },
+        { alive: 1 },
+        { alive: 0 },
+        { alive: 0 },
+        { alive: 0 },
+        { alive: 0 },
+        { alive: 0 },
+        { alive: 0 },
+        { alive: 0 },
+        { alive: 0 }
+      ]
     };
   },
   methods: {
@@ -68,7 +120,7 @@ export default {
         }
       }
     },
-    aclick(e){
+    aclick(e) {
       console.log(e.target);
     }
   }
@@ -90,13 +142,82 @@ export default {
 /deep/.mint-header.is-fixed {
   border-bottom: 1px solid #eee;
 }
-/deep/.van-sidebar {background: #f5f5f5}
+/deep/.van-sidebar {
+  background: #f5f5f5;
+}
 //  侧边导航栏
 .daohan {
   display: flex;
   margin-top: 40px;
- .tar{
-   
- }
+  .tar {
+    //  精选部落
+    width: 100%;
+    .tar_tow {
+      .tar_header {
+        margin: 15px;
+        .tar_header_top {
+          display: flex;
+          img {
+            width: 65px;
+            border-radius: 10px;
+          }
+          .span_top {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            .span1 {
+              font-weight: bold;
+              margin: 0px 0 15px 15px;
+            }
+            .text {
+              display: block;
+              background: #f76904;
+              color: #fff;
+              font-size: 15px;
+              width: 60px;
+              text-align: center;
+              height: 27px;
+              border-radius: 15px;
+              i {
+                font-size: 20px;
+                margin-right: 5px;
+              }
+            }
+          }
+          .span2 {
+            font-size: 14px;
+            font-weight: normal;
+            color: #333;
+            margin-top: 5px;
+          }
+        }
+        // 内容文字
+        .tar_text {
+          background: #eee;
+          border-radius: 5px;
+          height: 50px;
+          width: 290px;
+          margin-top: 8px;
+          padding: 10px;
+          color: #333;
+          font-size: 14px;
+          overflow: hidden;
+          line-height: 19px;
+          // 超出行数...
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 3;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+        }
+        .ge {
+          margin-top: 15px;
+          height: 1px;
+          background: #eee;
+        }
+      }
+    }
+  }
 }
 </style>
