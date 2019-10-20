@@ -287,7 +287,7 @@ export default {
       p: 100,
       isxintie: "lm",
       xuan: [{ show: true }, { show: false }],
-      isshow: [{ alive: 1 }, { alive: 0 }]
+      isshow: [{ alive: 1 }, { alive: 0 }],
     };
   },
   methods: {
@@ -316,7 +316,7 @@ export default {
           this.p -= 1;
         }
       }
-    }
+    },
   }
 };
 </script>
