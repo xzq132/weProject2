@@ -11,7 +11,7 @@
         333
       </mt-tab-container-item>
       <mt-tab-container-item id="tab4">
-        444
+        <myself></myself>  
       </mt-tab-container-item>
     </mt-tab-container>
     <mt-tabbar v-model="selected">
