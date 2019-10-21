@@ -2,7 +2,7 @@
   <div>
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="index">
-        111
+        <index></index>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab2">
         222
@@ -48,6 +48,7 @@
 </template>
 <script>
 import Tabbaricon from './common/TabBarIcon.vue'
+import Index from './common/Index.vue'
 export default {
   data(){
     return {
@@ -72,7 +73,8 @@ export default {
     }
   },
   components:{
-    "tabbaricon":Tabbaricon
+    "tabbaricon":Tabbaricon,
+    "index":Index,
   }
 }
 </script>
