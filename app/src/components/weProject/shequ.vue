@@ -3,9 +3,12 @@
     <!-- 头部打卡模块 -->
     <div class="shequ">
       <div class="shequ_top">
-        <img src="../../assets/rl.jpg" alt />
+        <!-- 点击打卡 -->
+        <img @click="show(1)" v-show="isshow[0].alive==1" src="../../assets/rl.jpg" alt />  
+        <span v-show="isshow[0].alive==1">立即打卡</span>
         <!-- 需判断用户是否判断 -->
-        <span>立即打卡</span>
+        <img v-show="isshow[1].alive==1" src="../../assets/rl2.jpg" alt />  
+        <span v-show="isshow[1].alive==1">连续打卡{{day}}天</span>
       </div>
       <div class="shequ_top2">
         <div>
@@ -31,8 +34,8 @@
       <div class="kong"></div>
       <!-- 部落活动 -->
       <div class="like_header">
-        <span class="like_header_left">活动部落</span>
-        <span class="like_header_right huodong">6个活动进行中</span>
+        <span class="like_header_left" @click="goactivity">活动部落</span>
+        <span class="like_header_right huodong" @click="goactivity">6个活动进行中</span>
         <div class="jian"></div>
       </div>
       <!-- 活动部落主体 -->
@@ -56,11 +59,31 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      day:1,//记录打卡天数
+      isshow: [{ alive: 1 }, { alive: 0 }]//控制打卡显示
+    };
   },
   methods: {
     gotribe(){
       this.$router.replace("/tribe")//跳转到兴趣部落
+    },
+    goactivity(){
+      this.$router.replace("/activity")//跳转部落活动
+    },
+    // 控制点赞显示隐藏
+    show(n) {
+      if (n % 2 != 0) {
+        this.day +=1 ;
+      }
+      for (var i = 0; i < this.isshow.length; i++) {
+        if (n == i) {
+          this.isshow[i].alive = 1;
+        } else {
+          this.isshow[i].alive = 0;
+          
+        }
+      }
     }
   },
 };
@@ -91,7 +114,7 @@ export default {
     div {
       display: flex;
       img {
-        width: 30px;
+        width: 30px;height:30px;
         margin: 10px;
       }
       span {
@@ -152,9 +175,9 @@ export default {
   }
   // 部落活动内容
   .remen{
-    border:1px solid #ccc;
     border-radius: 10px;
     margin:10px;
+    box-shadow: 1px 1px 5px #888888;
     .text{
       width: 70px;
       height:20px;
