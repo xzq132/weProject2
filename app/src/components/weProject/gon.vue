@@ -76,13 +76,14 @@ export default {
         top:50px;
         position:fixed;
         z-index:11;
+        padding:7px;
 
         #sou{
        padding:10px;
-        height:22px;
+        height:13px;
         width:200px;
         border-radius:25px;
-        font-size:20px;
+        font-size:17px;
         background: #ddd;
         outline: 0;
         border:none;

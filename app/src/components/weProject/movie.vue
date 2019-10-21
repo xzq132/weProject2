@@ -2,7 +2,7 @@
   <div>
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="index">
-        111
+        <index></index>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab2">
         222
