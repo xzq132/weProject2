@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 页面头导航 -->
-    <div class="home">
+    <div class="home" v-show="searchBar">
       <img src="../../../assets/pl.jpg" alt />
       <span class="text">{{home}}</span>
       <img src="../../../assets/pl.jpg" alt />
@@ -77,12 +77,18 @@
           <!-- 个人中心标题 -->
           <div class="geren">
             <div class="geren_left">
-              <img src="../../../assets/pinglun/kf.jpg" alt=""></div>
+              <img class="tou" src="../../../assets/pinglun/kf.jpg" alt="">
+              <img class="tou2" src="../../../../public/myself/enq.png" alt="">
+            </div>
             <div>
               <span class="content1">Ca糖豆n豆儿dy</span>
               <span class="content2">6月23日</span>
             </div>
-            <span class="pilun">Lv8</span>
+            <span class="pilun">
+              <img class="pilun2" src="../../../../public/myself/ffd.png" alt="">
+              <span class="pilun1">Lv8</span>
+            </span>
+            
           </div>
           <!-- 评论内容 -->
           <div class="conter">
@@ -192,7 +198,7 @@
 <script>
 export default {
   data() {
-    return {
+    return {    
       // 头部区
       home: "深圳吃喝玩乐",
       sum: 10,
@@ -200,6 +206,7 @@ export default {
         {show:1},
         {show:0},
       ],
+      searchBar:0,
       // 评论区
       p: 100,
       isxintie: "lm",
@@ -256,15 +263,40 @@ export default {
         }
       }
     },
+    // 添加滚动方法
+    handleScroll(){
+      var scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+      var header=document.getElementsByClassName("home");
+      // console.log(header)
+      if(scrollTop>20){
+        this.searchBar=1;
+        // header.style.opacity="1";
+      }else{
+        this.searchBar=0;
+        // header.style.opacity="0";
+      }
+    }
+  },
+  mounted() {
+    //监听滚动事件
+    window.addEventListener('scroll',this.handleScroll)
   },
 };
 </script>
 <style lang="scss" scoped>
 .home {
+  background:#fff;
   display: flex;
   justify-content: space-between;
   height: 40px;
-  padding: 0px 15px;
+  // ------------
+  position:fixed;
+  top:0;
+  width: 100%;
+  background:rgba(255,255,255,1);
+  transition: opacity 0.5s linear;
+  // z-index:-1;
+  
   img {
     width: 40px;
   }
@@ -367,14 +399,16 @@ export default {
     span{color:#bbb};
   }
 }
-.img {
-  margin-top: 40px;
+.img { 
   width: 100%;
   height: 315px;
   position: absolute;
   top: 0px;
   z-index: -1;
   filter: blur(2px);
+}
+.img2{
+  margin-top: 40px;
 }
 // 置顶活动
 .zhiding{
@@ -428,8 +462,16 @@ export default {
   .geren{
     display: flex;
     .geren_left{
-      img{
-        width: 40px;height: 40px;
+      position: relative;
+      .tou{
+        width: 45px;height: 45px;
+        border-radius: 50%;
+      }
+      .tou2{
+        width: 18px;
+        position: absolute;
+        top:26px; right:-1px;
+        border:1px solid #fff;
         border-radius: 50%;
       }
     }
@@ -445,21 +487,31 @@ export default {
       color: #aaa;
     }
     .pilun{
+      position: relative;
+       .pilun2{
+        width: 25px;
+        position: absolute;
+        left: -1px;top:-3px;
+      }
+    .pilun1{
       font-size: 15px;
+      font-weight: bold;
       display: inline;
       background: #000;
-      color:#b79561;
+      color:#ffe4bb;
       line-height: 20px;
       height: 20px;
       padding:0 10px;
-      border-radius: 10px;
+      border-radius: 10px  
     }
+    }
+   
   }
   // 评论主内容
   .conter {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    // margin-top: 10px;
     .conter_left {
       color: #000;
       margin-top: 10px;
