@@ -6,6 +6,7 @@ import shequheader from './components/weProject/shequheader.vue'
 import Gon from './components/weProject/gon.vue'
 import G from './components/weProject/g.vue'
 import GonChild3 from './components/weProject/gonChild3.vue'
+import tribe from "./components/weProject/tribe.vue"
 
 Vue.use(Router)
 
