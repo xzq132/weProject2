@@ -8,7 +8,7 @@
         222
       </mt-tab-container-item>
       <mt-tab-container-item id="tab3">
-        333
+        <shequheader></shequheader>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab4">
         <myself></myself>  
@@ -49,6 +49,7 @@
 <script>
 import Tabbaricon from './common/TabBarIcon.vue'
 import myself from './myself'
+import shequheader from './shequheader.vue'
 export default {
   data(){
     return {
@@ -74,7 +75,8 @@ export default {
   },
   components:{
     "tabbaricon":Tabbaricon,
-    "myself":myself
+    "myself":myself,
+    "shequheader":shequheader
   }
 }
 </script>
