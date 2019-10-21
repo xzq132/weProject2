@@ -5,12 +5,14 @@ import Login from './components/weProject/common/Login.vue'
 import shequheader from './components/weProject/shequheader.vue'
 import Gon from './components/weProject/gon.vue'
 import myself from './components/weProject/myself.vue'
+import text from './components/weProject/text.vue'
 
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {path:'/text',component:text},
     {path:'/myself',component:myself},
     {path:'/login',component:Login},
     {path:"/Gon",component:Gon},
