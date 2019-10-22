@@ -87,8 +87,7 @@
             <span class="pilun">
               <img class="pilun2" src="../../../../public/myself/ffd.png" alt="">
               <span class="pilun1">Lv8</span>
-            </span>
-            
+            </span> 
           </div>
           <!-- 评论内容 -->
           <div class="conter">
