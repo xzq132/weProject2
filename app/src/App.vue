@@ -13,6 +13,7 @@ body{
   margin:0;
 }
 *{margin:0;padding:0;}
+a{text-decoration: none;color:#000;}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
