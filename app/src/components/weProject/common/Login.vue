@@ -13,7 +13,7 @@
     <!-- 用户输入 -->
     <div class="phone">
       <p>中国+86<i></i></p>
-      <input type="text" v-model="phone" placeholder="请输入手机号" maxlength="11" @input="input">
+      <input type="number" v-model="phone" placeholder="请输入手机号" maxlength="11" @input="input">
       <img src="../../../../public/Login/fpk.png" @click="clear" :class="btn?'no':'active'">
     </div>
     <!-- 用户输入完成，点击下一步 -->
@@ -58,6 +58,7 @@ export default {
     }
   },
   created() {
+    this.isLogin();
   },
   mounted() {
     document.getElementsByTagName("input")[0].focus();
@@ -75,8 +76,9 @@ export default {
       if(!reg.test(this.phone)){
         this.$messagebox("提示","手机号格式不正确")
       }else{
-        this.$router.push({path:'/login1'}),localStorage.setItem("phone",this.phone);
-        this.phone=sessionStorage.getItem("phone");
+        localStorage.setItem("phone",this.phone);
+        this.phone=localStorage.getItem("phone");
+        this.$router.push({path:'/login1'})
       }
     },
     // 监听用户输入的手机号
@@ -98,8 +100,18 @@ export default {
       var more=document.getElementById("more");
       // 更多隐藏
       more.style.display="none";
+    },
+    isLogin(){
+      console.log(this.$store.getters.isLogin);
+      return this.$store.getters.isLogin;
     }
   },
+  // computed: {
+  //   isLogin(){
+  //     console.log(this.$store.getters.isLogin);
+  //     return this.$store.getters.isLogin;
+  //   }
+  // },
 }
 </script>
 <style lang="scss" scoped>

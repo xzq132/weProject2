@@ -76,9 +76,96 @@
       <span class="pinlun_text">服务员小哥哥小姐姐很热情～环境装修的也蛮温馨，晚餐时间人很多，服务员小哥哥小姐姐很忙～</span>
       <img class="pinlun_img" src="../../../assets/pinglun/pl7.jpg" alt />
     </div>
+    <!-- 点赞列表 -->
+    <div class="dzlb">
+      <span class="dz_header">浏览:95</span>
+      <div class="txlb">
+        <!-- 点赞 -->
+        <div class="txlb_left" >
+          <img class="txlb_left_img"  @click="show(1)" v-show="onclick[0].alive==1" src="../../../assets/dz.jpg" alt />
+          <img class="txlb_left_img" @click="show(0)" v-show="onclick[1].alive==1" src="../../../assets/dz2.jpg" alt />
+          <span>{{sum}}</span>
+        </div>
+        <!-- 头像 -->
+        <div class="txlb_cont" >
+          <img src="../../../assets/pinglun/kf2.jpg" alt="">
+          <img src="../../../assets/pinglun/kf2.jpg" alt="">
+          <img src="../../../assets/pinglun/kf2.jpg" alt="">
+          <img src="../../../assets/pinglun/kf2.jpg" alt="">
+          <img src="../../../assets/pinglun/kf2.jpg" alt="">
+        </div>
+        <!-- 更多 -->
+        <div class="txlb_right">
+          <img src="../../../../public/Login/d8u.png" alt="">
+        </div>
+      </div>
+      <!-- 评论条数 -->
+      <span class="dp">评论（9）</span>
+      <div class="dp_one">
+        <span><img src="../../../assets/pinglun/kf.jpg" alt=""></span>
+        <div class="splick_left"><input type="text" placeholder="说点啥吧！！！"></div>
+      </div> 
+       <!-- 个人评论左 -->
+    <div class="geren">
+      <div class="geren_left">
+        <img class="tou" src="../../../assets/pinglun/kf.jpg" alt />
+        <img class="tou2" src="../../../../public/myself/enq.png" alt />
+      </div>
+      <div>
+        <span class="content1">Ca糖豆n豆儿dy</span>
+        <span class="content2">6月23日</span>
+        <span class="content3">优秀，666</span>
+      </div>
+      <span class="pilun">
+        <img class="pilun2" src="../../../../public/myself/ffd.png" alt />
+        <span class="pilun1">Lv8</span>
+      </span>
+      <div>
+        <span class="guan">关注</span>
+      </div>
+    </div>
+    <div class="geren">
+      <div class="geren_left">
+        <img class="tou" src="../../../assets/pinglun/kf.jpg" alt />
+        <img class="tou2" src="../../../../public/myself/enq.png" alt />
+      </div>
+      <div>
+        <span class="content1">Ca糖豆n豆儿dy</span>
+        <span class="content2">6月23日</span>
+        <span class="content3">优秀，666</span>
+      </div>
+      <span class="pilun">
+        <img class="pilun2" src="../../../../public/myself/ffd.png" alt />
+        <span class="pilun1">Lv8</span>
+      </span>
+      <div>
+        <span class="guan">关注</span>
+      </div>
+    </div>
+
+    </div>
+    <!-- 下方固定栏 -->
     <div class="splick">
-      <input type="text" placeholder="说点啥吧！！！">
-      <span></span>
+      <div class="splick_left"><input type="text" placeholder="说点啥吧！！！"></div>
+      <div class="splick_right" >
+        <!-- 点赞 -->
+        <div class="righton" >
+          <img  @click="show(1)" v-show="onclick[0].alive==1" src="../../../assets/dz.jpg" alt />
+          <img @click="show(0)" v-show="onclick[1].alive==1" src="../../../assets/dz2.jpg" alt />
+          <span>{{sum}}</span>
+        </div>
+        <!-- 收藏 -->
+        <div class="righton" >
+           <img  @click="show2(0)" v-show="onclick2[1].alive==1" src="../../../../public/myself/co3.png" alt />
+          <img @click="show2(1)" v-show="onclick2[0].alive==1" src="../../../../public/myself/di9.png" alt />
+          <span>{{sum2}}</span>
+        </div>
+        <!-- 评论 -->
+        <div class="righton" >
+          <img src="../../../assets/pl.jpg" alt />
+          <span>6</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -86,9 +173,13 @@
 export default {
   data() {
     return {
+      sum:6,
+      sum2:2,
       style: {},
       opacity: 0,
-      isshow: 0
+      isshow: 0,
+      onclick: [{ alive: 1 }, { alive: 0 }],
+      onclick2: [{ alive: 1 }, { alive: 0 }],
     };
   },
   methods: {
@@ -97,7 +188,7 @@ export default {
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      console.log(scrollTop);
+      // console.log(scrollTop);
       // 计算移动距离给透明度的值
       this.opacity = Math.abs(Math.round(scrollTop)) / 200;
       this.style = { background: `rgba(256,256,256,${this.opacity})` };
@@ -106,7 +197,41 @@ export default {
       } else {
         this.isshow = 0;
       }
+    },
+    show(n){
+       if (n % 2 == 0) {
+        this.sum = this.sum - 1;
+      } else {
+        this.sum = this.sum + 1;
+      }
+        for (var i = 0; i < this. onclick.length; i++) {
+        if (n == i) {
+          this. onclick[i].alive = 1;
+        } else {
+          this. onclick[i].alive = 0;
+        }
+      }
+    },
+    show2(n){
+       if (n % 2 == 0) {
+        this.sum2 = this.sum2 - 1;
+        this.$toast("已取消关注")
+      } else {
+        this.sum2 = this.sum2 + 1;
+        this.$toast("关注成功")
+      }
+        for (var i = 0; i < this. onclick2.length; i++) {
+        if (n == i) {
+          this. onclick2[i].alive = 1;
+           
+        } else {
+          this. onclick2[i].alive = 0;
+          
+        }
+      }
     }
+
+
   },
   mounted() {
     //监听滚动事件
@@ -115,6 +240,81 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+// 点赞评论
+.dzlb{
+  margin-bottom: 60px;
+  margin:0 15px 60px 15px;
+  .dz_header{
+    font-size: 12px;
+    color:#aaa;
+  }
+  .txlb{
+      border-top:1px solid #eee;
+      border-bottom:1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      .txlb_left{  //点赞
+        margin-top:10px;
+        .txlb_left_img{
+          width: 30px;
+        }
+      }
+      .txlb_cont{ //头像
+        img{
+          width: 35px;
+          border-radius: 50%;
+          margin:10px;
+        }
+      }
+      .txlb_right{
+        margin-top:10px;
+      }
+    }
+  .dp{
+    font-size: 20px;
+    display: block;
+    margin:10px;
+  }
+  .dp_one{
+    display: flex;
+    img{
+      width: 40px;height:40px;
+      border-radius: 50%;
+     }
+    .splick_left{
+      input{
+        margin-top: 4px;
+        width: 170%;
+      }
+      
+    }
+  }
+  .geren{
+    border-bottom: 1px solid #f5f5f5;
+    margin:15px 0;
+    .geren_left{
+     
+    }
+    .content1{
+      margin-right: 0px;
+    }
+    .content3{
+      margin: 10px 10px;
+      font-size: 15px;
+    }
+  }
+}
+// 评论框
+  .splick_left{
+    margin-left: 10px;
+    input{
+      border:none;
+      background:#eee;
+      height:35px;
+      border-radius: 20px;
+      text-indent: 10px;
+    }
+  }
 // 关注
 .guan {
   border: 1px solid #fd4800;
@@ -268,5 +468,23 @@ export default {
 // 说点啥
 .splick{
   padding:5px 15px 5px 15px;
+  display:flex;
+  justify-content: space-between;
+  background: #fff;
+  // z-index: 999;
+  position: fixed;
+  bottom:0px;
+  margin:0 15px;
+  width: 355px;
+  .splick_right{
+    display: flex;
+    .righton{
+      display: block;
+      margin:0 3px;
+      img{
+        width: 27px;
+      }
+    }
+  }
 }
 </style>
