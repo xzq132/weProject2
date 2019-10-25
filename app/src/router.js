@@ -15,16 +15,14 @@ import activity from './components/weProject/activity.vue'
 // import tribalhome from './components/weProject/shequ/tribalhome.vue'
 import guanzhu from './components/weProject/guanzhu.vue'
 import luzhu from './components/weProject/luzhu.vue'
+import myselfHeader from './components/weProject/myselfHeader.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
-<<<<<<< HEAD
-    {path:'/text',component:text},
-=======
+    {path:"/header",component:myselfHeader},
     {path:"/luzhu",component:luzhu},
     {path:'/guanzhu',component:guanzhu},
->>>>>>> 623d82551acf999cbb18e3ef4bbb9574fd0d722b
     {path:'/myself',component:myself},
     {path:'/login',component:Login},
     {path:'/login1',component:Login1},
