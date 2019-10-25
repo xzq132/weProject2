@@ -13,7 +13,7 @@
     <div class="phone">
       <input type="number" v-model.number="yzm" placeholder="请输入验证码" maxlength="6" @input="input">
       <img :class="btn?'no':'cha'" src="../../../../public/Login/fpk.png" @click="clear">
-      <mt-button class="btn">获取验证码</mt-button>
+      <mt-button class="btn" :disabled="disabled" @click="sendcode">{{btntxt}}</mt-button>
     </div>
     <!-- 登录问题 -->
     <div class="ways">
@@ -32,7 +32,10 @@ export default {
     return {
       yzm:'',
       btn:true,
-      phone:''
+      phone:'',
+      btntxt:"获取验证码",
+      disabled:false,
+      time:0
     }
   },
   created() {
@@ -42,6 +45,25 @@ export default {
     document.getElementsByTagName("input")[0].focus();
   },
   methods: {
+    // 验证码
+    sendcode(){
+      this.time=60;
+      this.disabled=true;
+      this.timer();
+      // 手机号
+    },
+    // 验证码倒计时
+    timer(){
+      if(this.time>0){
+        this.time--;
+        this.btntxt=this.time+"s后获取";
+        setTimeout(this.timer, 1000);
+      }else{
+        this.time=0;
+        this.btntxt="获取验证码";
+        this.disabled=false;
+      }
+    },
     // 点击变成密码登录
     upwd(){
       this.$router.push({path:"/Login2"})
