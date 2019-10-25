@@ -45,7 +45,7 @@
         <p>收藏</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <!-- <span>2张即将过期</span> -->
         <div class="list_jt">
           <img src="../../../public/myself/jt.png">
         </div>
@@ -57,10 +57,10 @@
         <div class="icon">
         <img src="../../../public/myself/zjll.png" >
         </div>
-        <p>收藏</p>
+        <p>最近浏览</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <!-- <span>2张即将过期</span> -->
         <div class="list_jt">
         <img src="../../../public/myself/jt.png">
         </div>
@@ -72,12 +72,12 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-          <img src="../../../public/myself/sc.png" >
+          <img src="../../../public/myself/ddp.png" >
         </div>
-        <p>收藏</p>
+        <p>待点评</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <!-- <span>2张即将过期</span> -->
         <div class="list_jt">
           <img src="../../../public/myself/jt.png">
         </div>
@@ -89,12 +89,12 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-          <img src="../../../public/myself/sc.png" >
+          <img src="../../../public/myself/dd.png" >
         </div>
-        <p>收藏</p>
+        <p>订单</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <!-- <span>2张即将过期</span> -->
         <div class="list_jt">
           <img src="../../../public/myself/jt.png">
         </div>
@@ -104,9 +104,9 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-        <img src="../../../public/myself/zjll.png" >
+        <img src="../../../public/myself/kj.png" >
         </div>
-        <p>收藏</p>
+        <p>卡券</p>
       </div>
       <div class="list_r">
         <span>2张即将过期</span>
@@ -119,12 +119,12 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-        <img src="../../../public/myself/zjll.png" >
+        <img src="../../../public/myself/jf.png" >
         </div>
-        <p>收藏</p>
+        <p>积分</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <span>9</span>
         <div class="list_jt">
         <img src="../../../public/myself/jt.png">
         </div>
@@ -134,12 +134,12 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-        <img src="../../../public/myself/zjll.png" >
+        <img src="../../../public/myself/jf.png" >
         </div>
-        <p>收藏</p>
+        <p>钱包</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <!-- <span>9</span> -->
         <div class="list_jt">
         <img src="../../../public/myself/jt.png">
         </div>
@@ -151,12 +151,12 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-          <img src="../../../public/myself/sc.png" >
+          <img src="../../../public/myself/gxxx.png" >
         </div>
-        <p>收藏</p>
+        <p>贡献信息</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <span>添加商户，贡献记录</span>
         <div class="list_jt">
           <img src="../../../public/myself/jt.png">
         </div>
@@ -166,12 +166,12 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-        <img src="../../../public/myself/zjll.png" >
+        <img src="../../../public/myself/sz.png" >
         </div>
-        <p>收藏</p>
+        <p>设置</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <!-- <span>2张即将过期</span> -->
         <div class="list_jt">
         <img src="../../../public/myself/jt.png">
         </div>
@@ -181,12 +181,12 @@
     <div class="list">
       <div class="list_l">
         <div class="icon">
-        <img src="../../../public/myself/zjll.png" >
+        <img src="../../../public/myself/gd.png" >
         </div>
-        <p>收藏</p>
+        <p>更多</p>
       </div>
       <div class="list_r">
-        <span>2张即将过期</span>
+        <span>联系客服、诚信分等</span>
         <div class="list_jt">
         <img src="../../../public/myself/jt.png">
         </div>
@@ -198,14 +198,14 @@
 <style lang="scss">
   .aa{
     .list{
-      width: 100%;
+      // width: 100%;
       display: flex;
       justify-content: space-between;
       .list_l{
         display: flex;
         justify-content: flex-start;
         .icon{
-          width: 40%;
+          width: 60px;
           padding-top: 3px;
         img{
           width: 50%;
@@ -213,7 +213,8 @@
         }
         }
         p{
-          margin-top: 7px;
+          width: 60px;
+          margin-top: 8px;
           font-size: 15px;
         }
       }
@@ -235,10 +236,10 @@
       }
     }
     .list_x{
-      width: 83%;
+      width: 82%;
       height: 1px;
       margin: 5px 0;
-      margin-left: 13%;
+      margin-left: 14%;
       opacity: 0.3;
     }
   }

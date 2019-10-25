@@ -50,7 +50,8 @@
 import Tabbaricon from './common/TabBarIcon.vue'
 import myself from './myself'
 import shequheader from './shequheader.vue'
-export default {
+import index from './common/Index.vue'
+export default{
   data(){
     return {
       selected:"index",
@@ -76,7 +77,8 @@ export default {
   components:{
     "tabbaricon":Tabbaricon,
     "myself":myself,
-    "shequheader":shequheader
+    "shequheader":shequheader,
+    "index":index
   }
 }
 </script>
