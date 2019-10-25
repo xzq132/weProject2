@@ -12,12 +12,14 @@ import myself from './components/weProject/myself.vue'
 import tribe from  './components/weProject/tribe.vue'
 import activity from './components/weProject/activity.vue'
 // import tribalhome from './components/weProject/shequ/tribalhome.vue'
-
-
+import guanzhu from './components/weProject/guanzhu.vue'
+import luzhu from './components/weProject/luzhu.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {path:"/luzhu",component:luzhu},
+    {path:'/guanzhu',component:guanzhu},
     {path:'/myself',component:myself},
     {path:'/login',component:Login},
     {path:'/login1',component:Login1},
