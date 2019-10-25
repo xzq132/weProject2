@@ -285,22 +285,19 @@
         <!-- :class="selNav==true?'active':''" -->
         <li  :class="selNav==i?'active':''"
          v-for="(item, i) of list" :key="i" :data-i="i" v-cloak>{{item}}</li>
-      <!-- <li>视频</li>
-        <li>菜谱</li>
-        <li>电影</li>
-        <li>美食</li>
-        <li>爱美</li>
-        <li>玩乐</li>
-        <li>旅行</li>
-        <li>结婚</li>
-        <li>购物</li>
-        <li>教培</li>
-        <li>家装</li>
-        <li>运动健身</li>
-        <li>宠物</li>
-        <li>遛娃</li>
-        <li>健康生活</li>-->
       </ul> 
+    </div>
+    <div class="grid">
+      <div class="grid-image" v-for="(d,i) of details" :key="i">
+        <img  :src="d.lg">
+        <p v-text="d.title"></p>
+        <div class="grid-item">
+          <div class="grid-name">
+            <img :src="d.sm">
+            <span v-text="d.name"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -309,7 +306,13 @@ export default {
   data(){return{
     selLi:true,
     selNav:0,
-    list:["推荐","视频","菜谱","电影","美食","爱美","玩乐","旅行","结婚","购物","教培","家装","运动健身","宠物","遛娃","健康生活"]
+    list:["推荐","视频","菜谱","电影","美食","爱美","玩乐","旅行","结婚","购物","教培","家装","运动健身","宠物","遛娃","健康生活"],
+    details:[
+      {lg:"index/m2.jpg",title:"干了这碗面",sm:"index/w1.jpg",name:"想瘦"},
+      {lg:"index/m3.jpg",title:"忠实粉丝~",sm:"index/w2.jpg",name:"共产主义接班人"},
+      {lg:"index/m4.jpg",title:"吃了一盒雪媚娘，这个下午都是甜甜的",sm:"index/w3.jpg",name:"今天吃什么好呀"},
+      {lg:"index/m5.jpg",title:"一定要点这个爆好吃",sm:"index/w4.jpg",name:"懒猫豆丁"},
+    ]
   }},
   methods:{
     handle(e){
@@ -341,8 +344,8 @@ export default {
   flex-flow: row nowrap;
   height: 48px;
   margin:0;
+  padding-top:10px;
   justify-content:space-around;
-  line-height: 48px;
   background-color:#fff;
 }
   .index .top .city{
@@ -350,13 +353,14 @@ export default {
     text-decoration: none;
   }
   .index .top .city span{
-    font-size:16px;
+    font-size:18px;
     color:#000;
     white-space: nowrap;
+    padding-top:2px;
   }
   .index .top .city i.icon{
     width: 16px;
-    background: url("../../../../public/index/jiantou.jpg") no-repeat 0px 16px;
+    background: url("../../../../public/index/jiantou.jpg") no-repeat 0px 8px;
     background-size:15px 15px;
   }
   .index .top input{
@@ -372,7 +376,7 @@ export default {
   }
   .index .top .map-icon{
     width: 30px;
-    background: url("../../../../public/index/gc1.png") no-repeat 0px 10px;
+    background: url("../../../../public/index/gc1.png") no-repeat;
     background-size: 30px 30px;
   }
 
@@ -450,5 +454,48 @@ export default {
     display: flex;
     white-space: nowrap;
     margin-right:20px;
+  }
+.index .grid{
+  display: flex;
+  justify-content: space-around;
+  flex-flow:row wrap;
+  margin-bottom:60px;
+  padding:2px;
+} 
+  .index .grid .grid-image{
+    width: 180px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom:2px;
+  }
+  .index .grid .grid-image>img{
+    width:100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .index .grid .grid-image>p{
+    padding-left:5px;
+  }
+  .index .grid-item{
+    display: flex;
+    justify-content:space-between;
+    padding:5px;
+  }
+  .index .grid .grid-item .grid-name{
+    display: flex;
+    white-space:nowrap;
+  }
+  .index .grid .grid-item .grid-name img{
+    width: 30px; border-radius: 50%; padding-right: 5px;
+  }
+  .index .grid .grid-item .grid-name span{
+    flex-flow: column nowrap;
+    padding-top:3px;
+    font:14px Arial;
+  }
+  .index .grid .grid-item div{
+    width: 20px;
+    background:url("../../../../public/index/dyx.png") no-repeat 0px 2px;
+    background-size:20px 20px;
   }
 </style>
