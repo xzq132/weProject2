@@ -26,17 +26,26 @@
         <img class="img4" :src="imgX" alt="">
       </div>
     </div>
+    <div>
+      <luzhu></luzhu>
+    </div>
   </div>
 </template>
 
 <script>
+import luzhu from './luzhu.vue'
 export default {
+  components:{
+       /*引入*/
+      'luzhu':luzhu
+    },
   data() {
     return {
+      /*图片*/ 
       images: require("../../assets/guanzhu/sousuo.png"),
       imggt: require("../../assets/guanzhu/ff0.png"),
       imgxin: require("../../assets/g5p.png"),
-      imgX: require("../../assets/guanzhu/c3k.png")
+      imgX: require("../../assets/guanzhu/c3k.png"),
     };
   }
 };

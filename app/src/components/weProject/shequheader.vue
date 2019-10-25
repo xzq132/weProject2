@@ -20,7 +20,9 @@
     </div>
     <!-- 下方切换的模块 -->
     <mt-tab-container v-model="selected">
-      <mt-tab-container-item  id="gz">关注模块</mt-tab-container-item>
+      <mt-tab-container-item  id="gz">
+        <guanzhu></guanzhu>
+      </mt-tab-container-item>
       <mt-tab-container-item  id="xiaoxi">消息模块</mt-tab-container-item>
       <mt-tab-container-item  id="sq">
         <shequ></shequ>
@@ -29,7 +31,11 @@
   </div>
 </template>
 <script>
+import guanzhu from './guanzhu.vue'
 export default {
+  components:{
+    'guanzhu':guanzhu
+  },
   data() {
     return {
      selected:"gz",

@@ -5,7 +5,7 @@
         <index></index>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab2">
-        222
+        <gon></gon>
       </mt-tab-container-item>
       <mt-tab-container-item id="tab3">
         <shequheader></shequheader>
@@ -50,6 +50,9 @@
 import Tabbaricon from './common/TabBarIcon.vue'
 import myself from './myself'
 import shequheader from './shequheader.vue'
+import index from './common/Index.vue'
+
+import gon from './gon.vue'
 export default {
   data(){
     return {
@@ -76,13 +79,20 @@ export default {
   components:{
     "tabbaricon":Tabbaricon,
     "myself":myself,
-    "shequheader":shequheader
+    "shequheader":shequheader,
+    "index":index,
+    "gon":gon
   }
 }
 </script>
 <style lang="scss" scoped>
   .mint-tabbar{
     background:#fafafa;
+    position:fixed;
+    bottom:0;
+  }
+  .mint-tab-container{
+    padding-bottom:58px;
   }
   .active{
   background-color:#fff !important;
