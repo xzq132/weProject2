@@ -8,6 +8,7 @@ import Login3 from './components/weProject/common/Login3.vue'
 import shequheader from './components/weProject/shequheader.vue'
 import Gon from './components/weProject/gon.vue'
 import myself from './components/weProject/myself.vue'
+import text from './components/weProject/text.vue'
 
 import tribe from  './components/weProject/tribe.vue'
 import activity from './components/weProject/activity.vue'
@@ -18,8 +19,12 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+<<<<<<< HEAD
+    {path:'/text',component:text},
+=======
     {path:"/luzhu",component:luzhu},
     {path:'/guanzhu',component:guanzhu},
+>>>>>>> 623d82551acf999cbb18e3ef4bbb9574fd0d722b
     {path:'/myself',component:myself},
     {path:'/login',component:Login},
     {path:'/login1',component:Login1},
