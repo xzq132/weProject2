@@ -1,10 +1,10 @@
 <template>
   <div :style="{height:height*lineNum + 'px'}" class="rollScreen_container" id ="rollScreen_container">
     <ul class="rollScreen_list" :style = {transform:transform} :class="{rollScreen_list_unanim:num===0}">
-      <li class="rollScreen_once" v-for="(item,index) in contentArr" :key=index :style="{height:height+'px'}">
+      <li class="rollScreen_once" v-for="(item,index) in contentArr" :key="index" :style="{height:height+'px'}">
         <span>{{item}}</span>
       </li>
-      <li class="rollScreen_once" v-for="(item,index) in contentArr" :key=index+contentArr.length :style="{height:height+'px'}">
+      <li class="rollScreen_once" v-for="(item,index) in contentArr" :key="index+contentArr.length" :style="{height:height+'px'}">
         <span>{{item}}</span>
       </li>
     </ul>
@@ -47,7 +47,7 @@ export default {
 }
 </script>
  
-<style>
+<style lang="scss" scoped>
   .rollScreen_container{
     display: inline-block;
     position:relative;

@@ -1,13 +1,13 @@
 <template>
-  
-<div id="SlideBar" class="box">
+  <div id="SlideBar" class="box">
     <div
       class="item"
       ref="slide"
       :style="slideStyle"
       @touchstart="start($event)"
       @touchmove="move($event)"
-      @touchend="end($event)">
+      @touchend="end($event)"
+    >
       <div class="right">
         <div class="like_img">
           <!-- 第一个 -->
@@ -104,12 +104,10 @@ export default {
           //判断滑动的距离是否大于class:btn的宽度
           moveX = (Math.abs(moveX) - this.$refs.btn.offsetWidth) * 0.1; // 0.3阻力系数
           this.slideStyle.left = -this.$refs.btn.offsetWidth - moveX + "px";
-        } 
-        else if (moveX >= 0) {
+        } else if (moveX >= 0) {
           //滑动距离是否大于等于0
           this.slideStyle.left = 0 + "px"; //大于等于0让class:item等于0
-        } 
-        else {
+        } else {
           this.slideStyle.left = moveX + "px"; //小于0让class:item等于滑动的距离
         }
       }
@@ -132,8 +130,7 @@ export default {
             //小于class:btn宽度的一半
             this.slideStyle.left = 0 + "px"; //左滑没有超过class:btn宽度的一半回原位
           }
-        } 
-        else if (moveX > 0 && this.endX != 0) {
+        } else if (moveX > 0 && this.endX != 0) {
           if (Math.abs(moveX) >= btnWidth / 2) {
             this.slideStyle.left = 0 + "px"; //右滑超过class:btn宽度的一半就滑回去
           } else if (Math.abs(moveX) < btnWidth / 2) {

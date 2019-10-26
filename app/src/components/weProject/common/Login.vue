@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <!-- 关闭界面 -->
-    <div class="close">
+    <div class="close" @click="close">
       <img src="../../../../public/Login/cl9.png" alt="">
     </div>
     <!-- 标题 -->
@@ -64,6 +64,10 @@ export default {
     document.getElementsByTagName("input")[0].focus();
   },
   methods: {
+    // 点击关闭
+    close(){
+      this.$router.push("/")
+    },
     // 点击右边×的时候回清空input的值
     clear(){
       this.phone="";
@@ -102,7 +106,6 @@ export default {
       more.style.display="none";
     },
     isLogin(){
-      console.log(this.$store.getters.isLogin);
       return this.$store.getters.isLogin;
     }
   },

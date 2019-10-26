@@ -35,7 +35,7 @@
             <span class="span33">赞：{{span1_3}}</span>
             </div>
         </div>
-        <img src="../../../public/img/pic3.png" alt="" class="img2">
+        <img src="../../../public/img/pic3.png" alt="">
     </div>
 <!-- 第二个-->
     <div class="div2">
@@ -47,7 +47,7 @@
             <span class="span33">赞：{{span1_33}}</span>
             </div>
         </div>
-        <img src="../../../public/img/pic4.png" alt="" class="img2">
+        <img src="../../../public/img/pic4.png" alt="">
     </div>
       <!--加载更多-->
       <div class="jiazha">
@@ -92,7 +92,7 @@
             <span class="span33">赞：{{span2_3}}</span>
             </div>
         </div>
-        <img src="../../../public/img/pic1.png" alt="" class="img2">
+        <img src="../../../public/img/pic1.png" alt="">
     </div>
 <!-- 第二个-->
     <div class="div2">
@@ -104,7 +104,7 @@
             <span class="span33">赞：{{span2_33}}</span>
             </div>
         </div>
-        <img src="../../../public/img/pic2.png" alt="" class="img2">
+        <img src="../../../public/img/pic2.png" alt="">
     </div>
       <!--加载更多-->
       <div class="jiazha">
@@ -153,9 +153,14 @@
 a{text-decoration: none;}
 ul{
     margin-top:20px;
-    display:flex;list-style-type:none;justify-content:space-around;
-    
+    display: flex;
+    li{
+        display: inline;
     }
+    li+li{
+        margin-left:10px;
+    }
+}
 li{background-color:#eee;padding:7px;border-radius:25px;}
 
     
