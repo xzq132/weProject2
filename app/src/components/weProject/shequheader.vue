@@ -59,7 +59,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" >
+<style lang="scss" scoped>
 .header {
   // 头部样式
   margin:15px 10px 0px 10px;
@@ -83,17 +83,16 @@ export default {
         margin-top:5px;
         padding: 0;
         //字体大小
-        .mint-tab-item-label{
+/deep/.mint-tab-item-label{
           font-size: 18px;
-          color: #666;
-           
+          color: #666;   
         }    
       }
       // 点击后样式
       // .is-selected{
       //   border-bottom:0px;
       // }
-      .is-selected{
+   /deep/   .is-selected{
         display: block;
         width: 50px;
         border-bottom:3px solid #ff0;

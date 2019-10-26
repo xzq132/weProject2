@@ -30,7 +30,68 @@
         <div class="jian"></div>
       </div>
       <!-- 兴趣主体内容 -->
-      <buluo></buluo>
+      <!-- <buluo></buluo> -->
+      <v-touch @swipeleft="onSwipeLeft" @swiperight="onSwipeRight" tag="div" >
+        <div :style="positionjson" :data-left="positionjson.left" class="right">
+          <div class="like_img">
+            <!-- 第一个 -->
+            <div class="like_img_one">
+              <img src="../../assets/guanzhu/ch.jpg" alt />
+              <div class="tb">
+                <i></i>
+                <span>1.9万人</span>
+              </div>
+              <div class="tuijian">深圳吃喝玩乐</div>
+            </div>
+            <!-- 第二个 -->
+            <div class="like_img_one">
+              <img src="../../assets/guanzhu/ms.jpg" alt />
+              <div class="tb">
+                <i></i>
+                <span>8.5万人</span>
+              </div>
+              <div class="tuijian">美食厨房DIY</div>
+            </div>
+            <!-- 第三个 -->
+            <div class="like_img_one">
+              <img src="../../assets/guanzhu/xc.jpg" alt />
+              <div class="tb">
+                <i></i>
+                <span>7.9万人</span>
+              </div>
+              <div class="tuijian">小吃零食</div>
+            </div>
+            <!-- 第四个 -->
+            <div class="like_img_one">
+              <img src="../../assets/guanzhu/mz.jpg" alt />
+              <div class="tb">
+                <i></i>
+                <span>1.5万人</span>
+              </div>
+              <div class="tuijian">美妆美容</div>
+            </div>
+            <!-- 第五个 -->
+            <div class="like_img_one">
+              <img src="../../assets/guanzhu/mz.jpg" alt />
+              <div class="tb">
+                <i></i>
+                <span>1.5万人</span>
+              </div>
+              <div class="tuijian">美妆美容</div>
+            </div>
+            <!-- 跟多 -->
+            <div class="like_img_one">
+              <img src="../../assets/guanzhu/mz.jpg" alt />
+              <div class="tb">
+                <i></i>
+                <span>1.5万人</span>
+              </div>
+              <div class="tuijian">美妆美容</div>
+            </div>
+          </div>
+        </div>
+      </v-touch>
+      <!--  -->
       <div class="kong"></div>
       <!-- 部落活动 -->
       <div class="like_header">
@@ -39,7 +100,7 @@
         <div class="jian"></div>
       </div>
       <!-- 活动部落主体 -->
-      <div class="remen">
+      <div class="remen"  @click="goactivity">
         <div class="text">热门活动</div>
         <div class="center">发帖送PASS卡&代金券|一城一故事·鹏城食记第60期，加精还能上首页！</div>
         <div class="span1">
@@ -61,12 +122,50 @@ export default {
   data() {
     return {
       day:1,//记录打卡天数
+      isshow: [{ alive: 1 }, { alive: 0 }],//控制打卡显示
+      positionjson: {
+        left: 0,
+        transition: "none",
+        lefthe:0,//
+        
+      },
       isshow: [{ alive: 1 }, { alive: 0 }]//控制打卡显示
     };
   },
   methods: {
-    gotribe(){
-      this.$router.replace("/tribe")//跳转到兴趣部落
+    // 监听滚动事件
+    // 左滑
+    onSwipeLeft(data) {
+      // console.log(111)
+      var lefthe = 0; //检测滑动的位置
+      this.positionjson.transition = "";
+      console.log(data);
+      var x = data.deltaX; //事件执行左滑动的距离
+      lefthe = x + lefthe; //滑动的距离记录到lefthe方便下次执行
+      // console.log(lefthe);
+      if(lefthe<-300){
+        lefthe=0;
+      }else{
+        lefthe=-220;
+      }
+      this.positionjson.transition = "left .5s";
+      this.positionjson.left = lefthe + "px";   //定位移动
+      
+    },
+    // 右滑动
+    onSwipeRight(data) {
+      this.lefthe=0;
+      this.positionjson.transition = "";
+      // console.log(data);
+      var x = data.deltaX; //事件执行左滑动的距离
+      this.lefthe = x + this.lefthe; //滑动的距离记录到lefthe方便下次执行
+      // console.log(this.lefthe);
+      this.lefthe=0;
+      this.positionjson.transition = "left .5s";
+      this.positionjson.left = this.lefthe + "px";   //定位移动
+    },
+    gotribe() {
+      this.$router.replace("/tribe"); //跳转到兴趣部落
     },
     goactivity(){
       this.$router.replace("/activity")//跳转部落活动
@@ -80,8 +179,7 @@ export default {
         if (n == i) {
           this.isshow[i].alive = 1;
         } else {
-          this.isshow[i].alive = 0;
-          
+          this.isshow[i].alive = 0;   
         }
       }
     }

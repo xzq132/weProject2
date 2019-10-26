@@ -31,7 +31,7 @@
             </div>
           </div>
           <!-- 评论内容 -->
-          <div class="conter">
+          <div class="conter"  @click="tplx">
             <div class="conter_left">
               <div class="conter_top">
                 <span class="span1">精华</span>
@@ -46,6 +46,11 @@
           </div>
           <!-- 点赞处 -->
           <div class="dz">
+            <div class="dz_right">
+              <img src="../../../assets/pl.jpg" alt />
+              <span>52</span>
+              <img src="../../../assets/zf.jpg" alt />
+            </div>
             <div class="dz_left">
               <div @click="show(1)" v-show="isshow[0].alive==1">
                 <img src="../../../assets/dz.jpg" alt />
@@ -65,6 +70,7 @@
               <span>52</span>
               <img src="../../../assets/zf.jpg" alt />
             </div>
+            
           </div>
           <ul class="plx">
             <li>
@@ -106,7 +112,7 @@
             </div>
           </div>
           <!-- 评论内容 -->
-          <div class="conter">
+          <div class="conter" @click="tplx">
             <div class="conter_left">
               <div class="conter_top">
                 <span class="span1">精华</span>
@@ -184,7 +190,7 @@
             </div>
           </div>
           <!-- 评论内容 -->
-          <div class="conter">
+          <div class="conter"  @click="tplx">
             <div class="conter_left">
               <div class="conter_top">
                 <!-- <span class="span1">精华</span> -->
@@ -291,6 +297,10 @@ export default {
     };
   },
   methods: {
+    // 跳转评论详情
+    tplx(){
+       this.$router.replace("/plstatil");
+    },
     isxuan(n) {
       for (var i = 0; i < this.xuan.length; i++) {
         if (n == i) {
@@ -445,6 +455,9 @@ export default {
   .dz {
     display: flex;
     justify-content: space-between;
+    width:100%;
+    padding:0;
+    position:relative;
     .dz_left {
       display: flex;
       img {
@@ -452,7 +465,6 @@ export default {
       }
       span {
         margin-left: 5px;
-        margin-top: 7px;
       }
       .right_left {
         position: relative;

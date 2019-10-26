@@ -6,7 +6,7 @@ import shequ from './components/weProject/shequ.vue'
 import buluo from './components/weProject/buluo.vue'
 import shequbar from './components/weProject/common/shequbar.vue'
 
-//引入vue-seamless-scroll 插件
+//引入vue-seamless-scroll 插件 
 import scroll from 'vue-seamless-scroll'
 Vue.use(scroll)
 
@@ -30,8 +30,8 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 
 // 引入axios
-import axios from 'axios'
-axios.defaults.baseURL="http://127.0.0.1:5000/"
+import axios from 'axios';
+axios.defaults.baseURL="http://127.0.0.1:5000/";
 axios.defaults.withCredentials=true;
 Vue.prototype.axios=axios;
 

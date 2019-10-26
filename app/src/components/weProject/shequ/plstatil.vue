@@ -10,8 +10,8 @@
       </div>
     </div>-->
     <!-- 更换后的导航条 -->
-    <div class="home" :style="style">
-      <img class="home_left" src="../../../../public/Login/cl5.png" alt />
+    <div class="home" :style="style1">
+      <img @click="shequheader" class="home_left" src="../../../../public/Login/cl5.png" alt />
       <div v-show="isshow" class="home_left2">
         <div class="img">
           <img class="img_l" src="../../../assets/pinglun/kf2.jpg" alt />
@@ -175,7 +175,7 @@ export default {
     return {
       sum:6,
       sum2:2,
-      style: {},
+      style1: {},
       opacity: 0,
       isshow: 0,
       onclick: [{ alive: 1 }, { alive: 0 }],
@@ -183,6 +183,10 @@ export default {
     };
   },
   methods: {
+    // 返回社区
+    shequheader(){
+      this.$router.replace("/shequheader")
+    },
     handleScroll() {
       var scrollTop =
         window.pageYOffset ||
@@ -191,7 +195,7 @@ export default {
       // console.log(scrollTop);
       // 计算移动距离给透明度的值
       this.opacity = Math.abs(Math.round(scrollTop)) / 200;
-      this.style = { background: `rgba(256,256,256,${this.opacity})` };
+      this.style1 = { background: `rgba(256,256,256,${this.opacity})` };
       if (scrollTop > 256) {
         this.isshow = 1;
       } else {

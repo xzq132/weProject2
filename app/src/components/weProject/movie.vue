@@ -51,7 +51,6 @@ import Tabbaricon from './common/TabBarIcon.vue'
 import myself from './myself'
 import shequheader from './shequheader.vue'
 import index from './common/Index.vue'
-
 import gon from './gon.vue'
 export default {
   data(){
@@ -80,7 +79,6 @@ export default {
     "tabbaricon":Tabbaricon,
     "myself":myself,
     "shequheader":shequheader,
-   
     "index":index,
     "gon":gon
   }
