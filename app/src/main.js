@@ -22,10 +22,8 @@ Vue.use(MintUi)
 // 导入vant-ui库中所有组件
 import Vant, { ImagePreview } from 'vant';
 import 'vant/lib/index.css';
+
 Vue.use(Vant);
-// 左右滑动
-import VueTouch from 'vue-touch'
-Vue.use(VueTouch, {name: 'v-touch'})
 
 // 引入axios
 import axios from 'axios';

@@ -139,10 +139,10 @@
         <span class="pilun1">Lv8</span>
       </span>
       <div>
-        <span @click="collect" class="geren_dz" v-show="isimg"></span>
-        <span @click="collect" class="geren_dz2" v-show="!isimg"></span>
+        <span class="guan">关注</span>
       </div>
     </div>
+
     </div>
     <!-- 下方固定栏 -->
     <div class="splick">
@@ -178,7 +178,6 @@ export default {
       style1: {},
       opacity: 0,
       isshow: 0,
-      isimg:1,
       onclick: [{ alive: 1 }, { alive: 0 }],
       onclick2: [{ alive: 1 }, { alive: 0 }],
     };
@@ -234,11 +233,9 @@ export default {
           
         }
       }
-    },
-    // 评论点赞切换
-    collect(){
-      this.isimg=!this.isimg;
     }
+
+
   },
   mounted() {
     //监听滚动事件
@@ -309,19 +306,6 @@ export default {
       margin: 10px 10px;
       font-size: 15px;
     }
-    .geren_dz,.geren_dz2{
-      width: 40px;height: 40px;
-      
-    }
-    .geren_dz{
-      background: url("../../../assets/dz.jpg")no-repeat;
-      background-size: 60%;
-    }
-    .geren_dz2{
-      background: url("../../../assets/dz2.jpg")no-repeat;
-      background-size: 60%;
-    }
-
   }
 }
 // 评论框

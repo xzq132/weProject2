@@ -459,7 +459,6 @@ export default {
   display: flex;
   justify-content: space-around;
   flex-flow:row wrap;
-  margin-bottom:60px;
   padding:2px;
 } 
   .index .grid .grid-image{
