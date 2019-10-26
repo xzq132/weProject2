@@ -31,7 +31,7 @@
           <div class="tar_header">
             <div class="tar_header_top">
               <div>
-                <img src="../../assets/guanzhu/ch.jpg" alt />
+                <img @click="tiao" src="../../assets/guanzhu/ch.jpg" alt />
               </div>
               <div class="span_top">
                 <span class="span1">
@@ -45,9 +45,8 @@
               <!-- 介绍 -->
             </div>
             <!-- 介绍文字 -->
-            <div
-              class="tar_text"
-            >即日起，鹏城吃喝玩乐正式更名为深圳吃喝玩乐。这是一个圈子，包容所有关于身边的一切，美食、旅行、生活、八卦、情感等等。欢迎分享你生活中的点点滴滴，找到志同道合的朋友，成为彼此的知己！</div>
+            <div class="tar_text" @click="tiao">
+              即日起，鹏城吃喝玩乐正式更名为深圳吃喝玩乐。这是一个圈子，包容所有关于身边的一切，美食、旅行、生活、八卦、情感等等。欢迎分享你生活中的点点滴滴，找到志同道合的朋友，成为彼此的知己！</div>
             <div class="ge"></div>
           </div>
         </div>
@@ -122,7 +121,10 @@ export default {
     },
     aclick(e) {
       console.log(e.target);
-    }
+    },
+    tiao(){
+      this.$router.replace("/tribalhome");
+    },
   }
 };
 </script>

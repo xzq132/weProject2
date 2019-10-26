@@ -192,7 +192,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .card-mid {
   overflow: hidden; //超出部分影藏
   -webkit-line-clamp: 4; //限制行数

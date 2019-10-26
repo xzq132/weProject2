@@ -47,7 +47,7 @@ export default {
 }
 </script>
  
-<style>
+<style lang="scss" scoped>
   .rollScreen_container{
     display: inline-block;
     position:relative;

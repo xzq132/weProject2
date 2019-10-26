@@ -2,7 +2,7 @@
   <div>
     <!-- 页面头导航 -->
     <div class="home" v-show="searchBar">
-      <img src="../../../assets/pl.jpg" alt />
+      <img @click=" houtui" src="../../../assets/pl.jpg" alt />
       <span class="text">{{home}}</span>
       <img src="../../../assets/pl.jpg" alt />
     </div>
@@ -10,7 +10,7 @@
     <div class="jieshao">
       <!-- 放回转发 -->
       <div class="zhuang">
-        <img src="../../../assets/pl.jpg" alt />
+        <img @click=" houtui" src="../../../assets/pl.jpg" alt />
         <img src="../../../assets/pl.jpg" alt />
       </div>
       <!-- 头图片介绍 -->
@@ -214,6 +214,10 @@ export default {
     };
   },
   methods: {
+    // 后退到前一个页面
+    houtui(){
+      this.$router.replace("/tribe");
+    },
     // 头部区
     tianjia(n){
       if(n==0){

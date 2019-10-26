@@ -31,7 +31,7 @@
             </div>
           </div>
           <!-- 评论内容 -->
-          <div class="conter">
+          <div class="conter"  @click="tplx">
             <div class="conter_left">
               <div class="conter_top">
                 <span class="span1">精华</span>
@@ -106,7 +106,7 @@
             </div>
           </div>
           <!-- 评论内容 -->
-          <div class="conter">
+          <div class="conter" @click="tplx">
             <div class="conter_left">
               <div class="conter_top">
                 <span class="span1">精华</span>
@@ -184,7 +184,7 @@
             </div>
           </div>
           <!-- 评论内容 -->
-          <div class="conter">
+          <div class="conter"  @click="tplx">
             <div class="conter_left">
               <div class="conter_top">
                 <!-- <span class="span1">精华</span> -->
@@ -291,6 +291,10 @@ export default {
     };
   },
   methods: {
+    // 跳转评论详情
+    tplx(){
+       this.$router.replace("/plstatil");
+    },
     isxuan(n) {
       for (var i = 0; i < this.xuan.length; i++) {
         if (n == i) {

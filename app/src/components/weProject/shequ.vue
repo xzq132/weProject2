@@ -91,7 +91,6 @@
           </div>
         </div>
       </v-touch>
-
       <!--  -->
       <div class="kong"></div>
       <!-- 部落活动 -->
@@ -101,7 +100,7 @@
         <div class="jian"></div>
       </div>
       <!-- 活动部落主体 -->
-      <div class="remen">
+      <div class="remen"  @click="goactivity">
         <div class="text">热门活动</div>
         <div class="center">发帖送PASS卡&代金券|一城一故事·鹏城食记第60期，加精还能上首页！</div>
         <div class="span1">
@@ -141,7 +140,7 @@ export default {
       // console.log(111)
       var lefthe = 0; //检测滑动的位置
       this.positionjson.transition = "";
-      // console.log(data);
+      console.log(data);
       var x = data.deltaX; //事件执行左滑动的距离
       lefthe = x + lefthe; //滑动的距离记录到lefthe方便下次执行
       // console.log(lefthe);
