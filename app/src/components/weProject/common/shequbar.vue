@@ -46,6 +46,11 @@
           </div>
           <!-- 点赞处 -->
           <div class="dz">
+            <div class="dz_right">
+              <img src="../../../assets/pl.jpg" alt />
+              <span>52</span>
+              <img src="../../../assets/zf.jpg" alt />
+            </div>
             <div class="dz_left">
               <div @click="show(1)" v-show="isshow[0].alive==1">
                 <img src="../../../assets/dz.jpg" alt />
