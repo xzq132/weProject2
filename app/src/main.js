@@ -6,10 +6,15 @@ import shequ from './components/weProject/shequ.vue'
 import buluo from './components/weProject/buluo.vue'
 import shequbar from './components/weProject/common/shequbar.vue'
 
+//引入vue-seamless-scroll 插件 
+import scroll from 'vue-seamless-scroll'
+Vue.use(scroll)
+
 //功能：引入第三方组件库mint-ui
 //1.完整引入mint-ui组件库中所有组件
 import MintUi from "mint-ui"
 //2.单引入mint-ui库中样式文件
+
 import "mint-ui/lib/style.css"
 //组件模块
 Vue.component("shequ",shequ)
