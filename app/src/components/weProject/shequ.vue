@@ -128,7 +128,8 @@ export default {
         transition: "none",
         lefthe:0,//
         
-      }
+      },
+      isshow: [{ alive: 1 }, { alive: 0 }]//控制打卡显示
     };
   },
   methods: {
