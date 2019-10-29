@@ -38,7 +38,8 @@ export default new Router({
     {path:"/activity",component:activity},//部落活动页面
     {path:"/tribalhome",
     component: resolve => require(['@/components/weProject/shequ/tribalhome.vue'], resolve)},//具体部落主页面 濑加载
-    {path:"/plstatil",
+    {path:'/plstatil/:pid',
+     name:'plstatil',
     component: resolve => require(['@/components/weProject/shequ/plstatil.vue'], resolve)},//评论详情主页面 濑加载
     {
       path: '/',

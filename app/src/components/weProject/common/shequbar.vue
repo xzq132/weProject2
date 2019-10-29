@@ -9,91 +9,7 @@
       </mt-tab-item>
     </mt-navbar>
     <mt-tab-container class="xintie_nei" v-model="isxintie">
-      <mt-tab-container-item id="lm">
-        <!-- 热门 -->
-       <div>
-        <div class="lemen">
-          <!-- 评论标题 -->
-          <div class="lm_header">
-            <div class="lm_header_left">
-              <img src="../../../assets/guanzhu/ms.jpg" alt />
-              <div class="text">
-                <div class="text_top">美食厨房DIY</div>
-                <div class="text_bom">8.5万成员已加入</div>
-              </div>
-            </div>
-            <div class="lm_header_right">
-              <div class="right_left">
-                <img class="stree" src="../../../assets/guanzhu/ms.jpg" alt />
-                <img class="tow" src="../../../assets/guanzhu/xc.jpg" alt />
-                <img class="one" src="../../../assets/guanzhu/mz.jpg" alt />
-              </div>
-              <div class="jian"></div>
-            </div>
-          </div>
-          <!-- 评论内容 -->
-          <div class="conter"  @click="tplx">
-            <div class="conter_left">
-              <div class="conter_top">
-                <span class="span1">精华</span>
-                <span class="span2">小身材，大美味！干炸小黄鱼别说你不爱吃</span>
-              </div>
-              <div class="conter_conter">来着用户:笺短移馋</div>
-              <div class="conter_botom">浏览364</div>
-            </div>
-            <div>
-              <img src="../../../assets/guanzhu/ms.jpg" alt />
-            </div>
-          </div>
-          <!-- 点赞处 -->
-          <div class="dz">
-            <div class="dz_right">
-              <img src="../../../assets/pl.jpg" alt />
-              <span>52</span>
-              <img src="../../../assets/zf.jpg" alt />
-            </div>
-            <div class="dz_left">
-              <div @click="show(1)" v-show="isshow[0].alive==1">
-                <img src="../../../assets/dz.jpg" alt />
-              </div>
-              <div @click="show(0)" v-show="isshow[1].alive==1">
-                <img src="../../../assets/dz2.jpg" alt />
-              </div>
-              <span>{{p}}</span>
-              <div class="right_left">
-                <img class="stree" src="../../../assets/guanzhu/ms.jpg" alt />
-                <img class="tow" src="../../../assets/guanzhu/xc.jpg" alt />
-                <img class="one" src="../../../assets/guanzhu/mz.jpg" alt />
-              </div>
-            </div>
-            <div class="dz_right">
-              <img src="../../../assets/pl.jpg" alt />
-              <span>52</span>
-              <img src="../../../assets/zf.jpg" alt />
-            </div>
-            
-          </div>
-          <ul class="plx">
-            <li>
-              <span class="pl1">800_蚊子12385:</span>
-              <span class="pl2">支持</span>
-            </li>
-            <li>
-              <span class="pl1">800_蚊子12385:</span>
-              <span class="pl2">666</span>
-            </li>
-            <li>
-              <span class="pl1">800_蚊子12385:</span>
-              <span class="pl2">很好</span>
-            </li>
-            <li>
-              <span class="pl3">查看全部52条评论</span>
-            </li>
-          </ul>
-        
-        </div>
-        <div class="kong"></div>
-       </div> 
+      <mt-tab-container-item id="lm">       
         <!-- 热门 -->
         <div v-for="(item,i) of list" :key="i">
         <div class="lemen">
@@ -116,7 +32,7 @@
             </div>
           </div>
           <!-- 评论内容 -->
-          <div class="conter"  @click="tplx">
+          <div class="conter"  @click="tplx(item)">
             <div class="conter_left">
               <div class="conter_top">
                 <span class="span1">精华</span>
@@ -151,7 +67,7 @@
               <img src="../../../assets/zf.jpg" alt />
             </div>
           </div>
-          <ul @click="dzpl" class="plx" :data-pid="item.pid">
+          <ul @click="dzpl" class="plx" >
             <li>
               <span class="pl1">800_蚊子12385:</span>
               <span class="pl2">支持</span>
@@ -307,10 +223,15 @@ export default {
     this.loadMore();  
     // this.dzpl();
   },
+  props:["pid"],
   methods: {
     // 跳转评论详情
-    tplx(){
-       this.$router.replace("/plstatil");
+    tplx(item){
+      console.log(`${item.pid}`)
+      //  this.$router.replace("/plstatil");
+       this.$router.push({
+         path:`/plstatil/${item.pid}`
+       })
     },
     isxuan(n) {
       for (var i = 0; i < this.xuan.length; i++) {
@@ -347,14 +268,13 @@ export default {
     //查询规定帖子id下的评论列表
     dzpl(event){
       var pid=event.target.dataset.pid;
-      console.log(pid);
       //创建url请求
       var url="shequheader";
       //创建obj添加参数
       var obj={pid};
       //发送ajax
       this.axios.get(url,{params:obj}).then(res=>{
-        console.log(res);
+        
       })
       
     },

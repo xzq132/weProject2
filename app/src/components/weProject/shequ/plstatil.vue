@@ -1,6 +1,6 @@
 <template>
-  <div>
-    
+  <div > 
+    <div v-for="(item,i) of list" :key="i">
     <!-- 头部导航 -->
     <!-- <div class="home" :style="style">
       <img class="home_left" src="../../../assets/pl.jpg" alt />
@@ -49,9 +49,9 @@
       </div>
     </div>
     <!-- 评论标题 -->
-    <span class="title">龙华区不错的西餐推荐分享</span>
+    <span class="title">{{item.iheadline}}</span>
     <div class="title_header">
-      <span class="header_span1">来自:深圳吃喝玩乐</span>
+      <span class="header_span1">来自:{{item.itribe}}</span>
       <span class="header_span2">1.9万成员已加入</span>
     </div>
     <!-- 评论主体 -->
@@ -78,13 +78,13 @@
     </div>
     <!-- 点赞列表 -->
     <div class="dzlb">
-      <span class="dz_header">浏览:95</span>
+      <span class="dz_header">浏览:{{item.itime}}</span>
       <div class="txlb">
         <!-- 点赞 -->
         <div class="txlb_left" >
           <img class="txlb_left_img"  @click="show(1)" v-show="onclick[0].alive==1" src="../../../assets/dz.jpg" alt />
           <img class="txlb_left_img" @click="show(0)" v-show="onclick[1].alive==1" src="../../../assets/dz2.jpg" alt />
-          <span>{{sum}}</span>
+          <span>{{item.dtime}}{{sum}}</span>
         </div>
         <!-- 头像 -->
         <div class="txlb_cont" >
@@ -106,15 +106,15 @@
         <div class="splick_left"><input type="text" placeholder="说点啥吧！！！"></div>
       </div> 
        <!-- 个人评论左 -->
-    <div class="geren">
+    <div v-for="(item,i) of dianping" :key="i"  class="geren">
       <div class="geren_left">
         <img class="tou" src="../../../assets/pinglun/kf.jpg" alt />
         <img class="tou2" src="../../../../public/myself/enq.png" alt />
       </div>
       <div>
-        <span class="content1">Ca糖豆n豆儿dy</span>
+        <span class="content1">{{item.cname}}</span>
         <span class="content2">6月23日</span>
-        <span class="content3">优秀，666</span>
+        <span class="content3">{{item.ccontent}}</span>
       </div>
       <span class="pilun">
         <img class="pilun2" src="../../../../public/myself/ffd.png" alt />
@@ -124,25 +124,6 @@
         <span class="guan">关注</span>
       </div>
     </div>
-    <div class="geren">
-      <div class="geren_left">
-        <img class="tou" src="../../../assets/pinglun/kf.jpg" alt />
-        <img class="tou2" src="../../../../public/myself/enq.png" alt />
-      </div>
-      <div>
-        <span class="content1">Ca糖豆n豆儿dy</span>
-        <span class="content2">6月23日</span>
-        <span class="content3">优秀，666</span>
-      </div>
-      <span class="pilun">
-        <img class="pilun2" src="../../../../public/myself/ffd.png" alt />
-        <span class="pilun1">Lv8</span>
-      </span>
-      <div>
-        <span class="guan">关注</span>
-      </div>
-    </div>
-
     </div>
     <!-- 下方固定栏 -->
     <div class="splick">
@@ -167,6 +148,7 @@
         </div>
       </div>
     </div>
+    </div> 
   </div>
 </template>
 <script>
@@ -180,9 +162,36 @@ export default {
       isshow: 0,
       onclick: [{ alive: 1 }, { alive: 0 }],
       onclick2: [{ alive: 1 }, { alive: 0 }],
+      list:[],//帖子详情
+      dianping:[],//评论列表
     };
   },
+  created() {
+    this.locame();
+    this. pinglun();
+  },
   methods: {
+    //查询规定帖子id下的评论列表
+    locame(){
+      var pid=this.$route.params.pid
+      // console.log(pid);
+      var url='/plasta';
+      var obj={pid};
+      this.axios.get(url,{params:obj}).then(res=>{
+        this.list=res.data.data
+        // console.log(this.list)
+      })
+    },
+    //根据帖子id查询帖子下所有用户的评论
+    pinglun(){
+      var pid=this.$route.params.pid
+      var url="/shequheader";
+      var obj={pid};
+      this.axios.get(url,{params:obj}).then(res=>{
+        this.dianping=res.data.data
+        console.log(this.dianping)
+      })
+    },
     // 返回社区
     shequheader(){
       this.$router.replace("/shequheader")
@@ -234,8 +243,6 @@ export default {
         }
       }
     }
-
-
   },
   mounted() {
     //监听滚动事件
