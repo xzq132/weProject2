@@ -46,7 +46,7 @@
             </div>
           </div>
           <!-- 点赞处 -->
-          <div class="dz">          
+          <div class="dz" :data-pid="item.pid" @click="pids" >          
             <div class="dz_left">
               <div @click="show(1)" v-show="isshow[0].alive==1">
                 <img src="../../../assets/dz.jpg" alt />
@@ -67,7 +67,7 @@
               <img src="../../../assets/zf.jpg" alt />
             </div>
           </div>
-          <ul @click="dzpl" class="plx" >
+          <!-- <ul @click="dzpl()" class="plx" :data-pid="item.pid">
             <li>
               <span class="pl1">800_蚊子12385:</span>
               <span class="pl2">支持</span>
@@ -83,8 +83,8 @@
             <li>
               <span class="pl3">查看全部52条评论</span>
             </li>
-          </ul>
-        
+          </ul> -->
+          <pllist></pllist>
         </div>
         <div class="kong"></div>
        </div> 
@@ -220,17 +220,16 @@ export default {
     };
   },
   created() {
-    this.loadMore();  
-    // this.dzpl();
+    this.loadMore()  
+    
   },
   props:["pid"],
   methods: {
     // 跳转评论详情
     tplx(item){
-      console.log(`${item.pid}`)
-      //  this.$router.replace("/plstatil");
+      // console.log(`${item.pid}`)
        this.$router.push({
-         path:`/plstatil/${item.pid}`
+       path:`/plstatil/${item.pid}`
        })
     },
     isxuan(n) {
@@ -265,19 +264,10 @@ export default {
         console.log(this.list);
       })
     },
-    //查询规定帖子id下的评论列表
-    dzpl(event){
+    pids(event){
       var pid=event.target.dataset.pid;
-      //创建url请求
-      var url="shequheader";
-      //创建obj添加参数
-      var obj={pid};
-      //发送ajax
-      this.axios.get(url,{params:obj}).then(res=>{
-        
-      })
-      
-    },
+      console.log(pid)
+    }
   }
 };
 </script>
@@ -447,25 +437,25 @@ export default {
     }
   }
   // 评论详情
-  .plx {
-    list-style: none;
-    margin: 15px 0px 15px 0px;
-    li {
-      .pl1,
-      .pl2 {
-        font-size: 15px;
-      }
-      .pl1 {
-        color: #05989c;
-      }
-      .pl3 {
-        display: block;
-        font-size: 14px;
-        margin-top: 5px;
-        color: #666;
-      }
-    }
-  }
+  // .plx {
+  //   list-style: none;
+  //   margin: 15px 0px 15px 0px;
+  //   li {
+  //     .pl1,
+  //     .pl2 {
+  //       font-size: 15px;
+  //     }
+  //     .pl1 {
+  //       color: #05989c;
+  //     }
+  //     .pl3 {
+  //       display: block;
+  //       font-size: 14px;
+  //       margin-top: 5px;
+  //       color: #666;
+  //     }
+  //   }
+  // }
 }
 // 空
 .kong {

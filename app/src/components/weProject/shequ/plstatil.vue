@@ -103,7 +103,7 @@
       <span class="dp">评论（9）</span>
       <div class="dp_one">
         <span><img src="../../../assets/pinglun/kf.jpg" alt=""></span>
-        <div class="splick_left"><input type="text" placeholder="说点啥吧！！！"></div>
+        <div class="splick_left"><input type="text" placeholder="说点啥吧！！！" v-model="ccontent" ><button @click="fashong">发送</button></div>
       </div> 
        <!-- 个人评论左 -->
     <div v-for="(item,i) of dianping" :key="i"  class="geren">
@@ -111,9 +111,10 @@
         <img class="tou" src="../../../assets/pinglun/kf.jpg" alt />
         <img class="tou2" src="../../../../public/myself/enq.png" alt />
       </div>
+      <!-- 评论内容 -->
       <div>
         <span class="content1">{{item.cname}}</span>
-        <span class="content2">6月23日</span>
+        <span class="content2">{{item.ctime}}  6月23日</span>
         <span class="content3">{{item.ccontent}}</span>
       </div>
       <span class="pilun">
@@ -127,7 +128,7 @@
     </div>
     <!-- 下方固定栏 -->
     <div class="splick">
-      <div class="splick_left"><input type="text" placeholder="说点啥吧！！！"></div>
+      <div class="splick_left"><input type="text" placeholder="说点啥吧！！！" ></div>
       <div class="splick_right" >
         <!-- 点赞 -->
         <div class="righton" >
@@ -164,6 +165,7 @@ export default {
       onclick2: [{ alive: 1 }, { alive: 0 }],
       list:[],//帖子详情
       dianping:[],//评论列表
+      ccontent:"",//输入的内容
     };
   },
   created() {
@@ -171,6 +173,17 @@ export default {
     this. pinglun();
   },
   methods: {
+    //发送用户的评论
+    fashong(){
+      var ccontent=this.ccontent;
+      var pid=this.$route.params.pid;
+      var obj={pid,ccontent};
+      var url='/ccontent';
+      // console.log(this.ccontent);
+      this.axios.get(url,{params:obj}).then(res=>{
+        console.log(res)
+      })
+    },
     //查询规定帖子id下的评论列表
     locame(){
       var pid=this.$route.params.pid

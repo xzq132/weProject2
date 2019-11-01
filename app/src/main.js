@@ -5,6 +5,7 @@ import store from './store'
 import shequ from './components/weProject/shequ.vue'
 import buluo from './components/weProject/buluo.vue'
 import shequbar from './components/weProject/common/shequbar.vue'
+import pllist from './components/weProject/shequ/pllist.vue'
 
 //引入vue-seamless-scroll 插件 
 import scroll from 'vue-seamless-scroll'
@@ -20,6 +21,7 @@ import "mint-ui/lib/style.css"
 Vue.component("shequ",shequ)
 Vue.component("buluo",buluo)
 Vue.component("shequbar",shequbar)
+Vue.component("pllist",pllist)
 //3.将mint-ui注册Vue实例
 Vue.use(MintUi)
 

@@ -35,7 +35,7 @@ server.use(express.static("public"))
 server.listen(5050)
 
 // 功能接口
-// 1.指定帖子id的查询用户评论
+//1.指定帖子id的查询用户评论
 server.get("/shequheader",(req,res)=>{
   // 获取用户uid
   // var uid=req.session.uid;
@@ -62,3 +62,47 @@ server.get("/plstatil",(req,res)=>{
     res.send({code:200,msg:"查询成功",data:result})
   })
 })
+//3.根据帖子id查询帖子 帖子详情页/plstatil
+server.get("/plasta",(req,res)=>{
+  var pid=req.query.pid;
+  var sql="SELECT uid,iheadline,itribe,igive,icontent,ipicture,itime,dtime,ptime FROM dz_invitation WHERE pid=?";
+  pool.query(sql,[pid],(err,result)=>{
+    if(err)throw err;
+    res.send({code:200,msg:"查询成功",data:result})
+  })
+})
+//4.根据帖子id插入评论数据 帖子详情页/plstatil
+server.get("/pinlun",(req,res)=>{
+  // 获取用户uid
+  // var uid=req.session.uid;
+  // if(!uid){
+  //   res.send({code:-1,msg:"请登录"});
+  //   return;
+  // }
+  var pid=req.query.pid;
+  var ccontent=req.query.ccontent;
+  var uid=req.query.uid;
+  // sql插入用户的评论
+  var sql="INSERT INTO dz_comment VALUES()  WHERE pid=?";
+  // 执行sql并放回结果
+  pool.query(sql,[pid],(err,result)=>{
+    if(err) throw err;
+    res.send({code:200,msg:"查询成功",data:result})
+  })
+})
+//5.用户评论加入评论表
+server.get("/ccontent",(req,res)=>{
+  // var uid=req.session.uid;
+  // if(!uid){
+  //   res.send({code:-1,msg:"请登录"});
+  //   return;
+  // }
+  var ccontent=req.query.ccontent;
+  var pid=req.query.pid;
+  var sql=`INSERT INTO dz_comment VALUES(null,${pid},null,null,null,null,${ccontent},now(),null)`;
+  pool.query(sql,(err,result)=>{
+    if(err) throw err;
+    res.send({code:1,msg:"添加成功"})
+  })
+})
+
